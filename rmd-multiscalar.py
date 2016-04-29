@@ -251,9 +251,9 @@ def record_by_type(p_vec,csv_file):
             stype = 'literal'
         else: stype = 'gricean'
         l1,l2,l3 = labels[i][0],labels[i][1],labels[i][2]
-        if l1 > len(lexica): l1 = l1 - len(lexica)
-        if l2 > len(lexica): l2 = l2 - len(lexica)
-        if l3 > len(lexica): l3 = l3 - len(lexica)
+        if l1 > len(lexica)-1: l1 = l1 - len(lexica)
+        if l2 > len(lexica)-1: l2 = l2 - len(lexica)
+        if l3 > len(lexica)-1: l3 = l3 - len(lexica)
 
         csv_file.writerow([stype,l1,l2,l3,str(p_vec[i])])
 
