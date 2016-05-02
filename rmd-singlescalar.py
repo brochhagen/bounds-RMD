@@ -20,7 +20,7 @@ import csv
 l1,l2,l3,l4,l5,l6 = np.array( [[0.,0.],[1.,1.]] ), np.array( [[1.,1.],[0.,0.]] ), np.array( [[1.,1.],[1.,1.]] ), np.array( [[0.,1.],[1.,0.]] ), np.array( [[0.,1.],[1.,1.]] ), np.array( [[1.,1.],[1.,0.]] )
 
 alpha = 1# rate to control difference between semantic and pragmatic violations
-cost = 0.85 # cost for LOT-concept with upper bound
+cost = 0.9 # cost for LOT-concept with upper bound
 lam = 30 # soft-max parameter
 k = 3  # number of learning observations
 mc = 1000 #amount of samples from OBS when k > 4

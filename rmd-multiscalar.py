@@ -18,7 +18,7 @@ import csv
 
 
 alpha = 1 # rate to control difference between semantic and pragmatic violations
-cost = 0.85 # cost for LOT-concept with upper bound
+cost = 0.9 # cost for LOT-concept with upper bound
 lam = 30 # soft-max parameter
 k = 3  # number of learning observations
 mc = 1000 #amount of samples from OBS when k > 4
