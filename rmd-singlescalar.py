@@ -22,8 +22,8 @@ l1,l2,l3,l4,l5,l6 = np.array( [[0.,0.],[1.,1.]] ), np.array( [[1.,1.],[0.,0.]] )
 alpha = 1# rate to control difference between semantic and pragmatic violations
 cost = 0.9 # cost for LOT-concept with upper bound
 lam = 30 # soft-max parameter
-k = 3  # number of learning observations
-mc = 1000 #amount of samples from OBS when k > 4
+k = 20  # number of learning observations
+sample_amount = 145 #amount of samples from OBS when k > 4
 
 gens = 30 #number of generations per simulation run
 runs = 100 #number of independent simulation runs
@@ -56,34 +56,34 @@ lexica_prior = lexica_prior / sum(lexica_prior)
 def normalize(m):
     return m / m.sum(axis=1)[:, np.newaxis]
 
+def summarize_counts(lst,k):
+    """summarize counts for tuples of k-states and k-messages""" #There are a couple of repeated observations, when summarized. For instance, if we have k = 2, then observation <<s_1,m_0>,<s_1,m_1>> is identical to <<s_1,m_1>,<s_1,m_0>>
+    out = []
+    for i in xrange(len(lst)):
+        counter = [0 for _ in xrange(states**messages)]
+        for j in xrange(k):
+            s,m = lst[i][0][j] *2, lst[i][1][j]
+            counter[s+m] += 1
+        out.append(counter)
+    print 'Number of observations:', len(out), datetime.datetime.now()
+    return out
+
 
 def get_obs(k):
     """Returns summarized counts of k-length <s_i,m_j> observations as [#(<s_0,m_0>), #(<s_0,m_1), #(<s_1,m_0>, #(s_1,m_1)], sum[...] = k"""
     inputx = [x for x in list(product(range(states), repeat=k))] #k-tuple where the i-th observed state was state k_i 
     outputy = [y for y in list(product(range(messages),repeat=k))] #k-tuple where the i-th produced message was k_i 
     D = list(product(inputx,outputy)) #list of all possible state-message combinations
-    if k > 4: D = sample(D,mc) #sample from D if sequence > 4 to manage computational load
-    
-    out = []
-    for i in range(len(D)): #this can be optimized but it's a straightforward way to summarize counts
-        s0m0 = 0
-        s0m1 = 0
-        s1m0 = 0
-        s1m1 = 0
-        for j in range(k):
-            if D[i][0][j] == 0:
-                if D[i][1][j] == 0:
-                    s0m0 += 1
-                else: 
-                    s0m1 += 1
-            else:
-                if D[i][1][j] == 0:
-                    s1m0 += 1
-                else:
-                    s1m1 += 1
-        out.append([s0m0,s0m1,s1m0,s1m1])
-    return out
 
+    if k < 4:
+        D = list(product(inputx,outputy)) #list of all possible state-message combinations
+    else: #producing the entire list crashed memmory for k>9. So we sample indices insead. This is still taxing for large k
+        prod = len(inputx) * len(outputy)
+        indices = sample(range(prod), sample_amount)
+        D = [(inputx[idx % len(inputx)], outputy[idx // len(inputx)]) for idx in indices]
+    return summarize_counts(D,k)
+
+    
 
 # likelihood function
 def get_obs_likelihood(k):
