@@ -1,0 +1,7 @@
+10000 generations
+1000 games
+alpha = 0.5, epsilon 0.05, n= 1
+alpha = 0.5, epsilon 0.05, n= 3
+
+alpha = 0.5, epsilon 0.05, n= 10
+alpha = 0.01, epsilon 0.05, n= 3

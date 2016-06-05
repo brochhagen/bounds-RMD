@@ -1,0 +1,127 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+
+\usepackage[round]{natbib}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{gb4e}
+\usepackage{subcaption}
+\usepackage{multicol}
+
+\usepackage{stmaryrd}
+
+\newcommand{\mvalueof}[1]{\llbracket#1\rrbracket}
+
+%%%New commands%%%
+\newcommand{\tuple}[1]{\ensuremath{\left\langle #1 \right\rangle}} 
+\newcommand{\citeposs}[2][]{\citeauthor{#2}'s (\citeyear[#1]{#2})}
+\newcommand{\hloranj}[1]{\textcolor[rgb]{.8,.33,.0}{#1}}% prints in orange
+\newcommand{\hlblue}[1]{\textcolor[rgb]{0.13,0.67,0.8}{#1}}
+\newcommand{\hlgrey}[1]{\textcolor[rgb]{0.57, 0.64, 0.69}{#1}}
+
+%\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\argmax}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{max}}\;}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
+
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+                     \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+                     =}
+
+	%%%%%%%%%%%%%%%%%%
+\usepackage{mathcomp}
+\usepackage{blkarray} %to label matrix
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{nicefrac}
+
+\begin{document}
+
+
+\title{(Evolutionary) Game Theory meets Bayesian (Iterated) Learning}
+\date{\today}
+
+\maketitle
+\tableofcontents 
+
+\abstract{Bayesian Game Theory as a framework to analyze language change}
+
+\section{Introduction}
+Natural languages change over time both within and across generations. That is, this process is influenced both by synchronic and diachronic developments. A number of different proposals have been put forward to explain the emergence and persistence of core features of language, such as \hloranj{add references e.g. for compositionality.} Notwithstanding, while differences can be gleamed from particular analyzes, the overall argument is one of competing pressures. On the one hand, languages need to be expressive enough to ensure communicative success within a linguistic community. On the other hand, they should be well-adapted to their faithful transmission across generations. In other words, functional pressure in tandem with learnability are expected to shed light on properties that allow natural language to cope with these forces. 
+
+Evolutionary game theory is one of the frameworks that has been used to analyze the dynamics of such competing forces \citep{nowak+krakauer:1999,huttegger+zollman:2013}. In the following, we focus on the replicator-mutator dynamics (RMD) which \hloranj{short blurb on this} (for an overview see \citealt{hofbauer+sigmund:2003}. Under this view, developments in the cultural evolution of languages are investigated in analogy to biological forces of evolution such as selection and mutation. In particular, the fitness of a geno- or phenotype is cast in terms of the communicative success of a type of communicative behavior, a core of which is the language spoken by it. The main assumption being that communicatively well-adapted languages prosper and spread in a population, or, framed in biological terms, produce more offspring. Mutation, in turn, is viewed as the faithful transmission of a language or communicative behavior, rather than the faithful transmission of biological information, i.e. its acquisition by a new generation of speakers. 
+
+A different view is offered by the iterated learning paradigm \hloranj{citations}. While the overall focus is still one of competing pressures, the focus lies in the explanatory value of language acquisition. In these models, languages are transmitted through learner-speaker chains. At the beginning of the chain, the first learner is exposed to some linguistic data from which she infers a language and produces linguistic data which then serves as input for the following learner in the chain. Iterated learning has been argued to yield insights in \hloranj{phenomena and citations}. One of its advantages is its versatility, being used for analytic analyzes, numerical simulations and human experiments \hloranj{more citations}. However, ... summarize \hloranj{Griffiths+kalish}.
+
+In the following, \hloranj{give an overview}.
+
+
+
+
+\section{Components of RMD}
+
+\subsection{Interpretation of components}
+
+The linguistic interpretation of the replicator-mutator dynamics and evolutionary game theory more broadly has stayed, by en large, close to its biological counterpart. The advantage of this broad view lies in the generality of the results obtained and enables for a straightforward import of insights gained from biological evolutionary game theory to its linguistic application, and vice versa. However, we believe that a more language-centric interpretation gives us additional leverage to understand, compare, and modify our models. On the technical side our proposal is conservative in that the dynamics of RMD remain as before. The difference from past approaches lies in the representation of mutation as a process of iterated Bayesian learning, and the final generation being analyzed after a replication instead of a mutation phase. We hope that the incorporation of (iterated) Bayesian learning in evolutionary models will allow to bridge and synthesize the results from different areas of inquiry on the cultural evolution of language. In particular, on the one side, language game paradigms as \citeposs{lewis:1969} signaling games and \citeposs{steels:2012} naming games, and on the other, iterated learning \citep{kirby:2001}.
+
+Classically, replication is framed in terms of reproduction (based on communicative success) and mutation as language acquisition error (see e.g. \citealt{komarova+etal:2001,nowak+etal:2001, nowak+etal:2002,hutteger+zollman:2013}). The former indicates the proportion of offspring a type of language user produces. The better adapted for communication within a population a type is, the more children it produces. The latter represents the proportion of children of a type that will faithfully adopt the type of their parents -- or adopt a different type. This introduces perturbations in the transmission of a language across generations and controls the proportion of transitions from one type to another. Mutation is often qualified as noise or confusability, and can either be uniform or dependent on any two types, i.e. either as a fixed chance of not learning a parent's language, adopting another uniformly, or be determined by some metric of closeness between two languages whereby close languages are more likely to be confused by learners.\footnote{\hloranj{They do generally compare different learning mechanisms. Either batch or sequential learning. Double check where learning comes in.}}
+
+\hloranj{Continue with fitness as synchronic adaptation. Fitness as condenced summary of adaption in synchronic change}
+
+\hloranj{Biological transmission, framed in terms of cultural transmission is naturally understood as learning}
+
+
+
+\paragraph{Fitness} Summary of adoption in synchronic change. \hloranj{cf. Komarova et al. 2001, Nowak et al 2001, 2002 for possible interpretations of fitness in evo ling settings}
+\paragraph{Mutation} Learning
+
+\subparagraph{Prior} Amount of evidence
+\subparagraph{Data} Difficult. Community? Not? Parent? All observations?
+\subparagraph{Learning} Matching? Maximum?
+
+\section{Comparisons}
+\subsection{Comparison to IL}
+
+Main result: Stationary distribution of IL is not reached by BGT.
+\subsection{MAP and RD without M}
+Does MAP turn into RD? No, because input is still important.
+
+\section{Toy example}
+For comparability, we follow the setup analyzed by \citet[\S 6]{griffths+kalish:2007}. $S = \{00,01,10,11\} = M$. $\mathcal{L}$ is the set of all possible mappings from $S$ to $M$, i.e. $4^4 = 256$ possible signaling systems.\footnote{Note that \citet{griffiths+kalish:2007} only take one-to-one mappings into consideration.} Four of which are compositional in that meaning and form components agree position-wise.\footnote{Note that \citet{griffiths+kalish:2007} take $260$ languages into consideration. $256$ possible (holistic) languages and $4$ compositional ones. However, the former set includes $4$ `holistic' languages identical to the $4$ compositional ones. We see no principled reason to consider such identical languages as distinct. As a consequence, we consider $252$ holistic and $4$ compositional languages.} For simplicity syntax, i.e. component order, is assumed to be given. $P(s) = \nicefrac{1}{|S|}$. Prior parameter $\alpha \in [.01,0.5]$, error parameter $\epsilon \in [.01,.05]$ and data length $n \in [1,10]$.
+
+\begin{align}
+P(m|s,L) &= \left\{\begin{array}{l} 1 - \epsilon \qquad \textnormal{if $m$ is true of $s$ in $L$}\\
+\frac{\epsilon}{3} \qquad \textnormal{otherwise}\end{array}\right.
+%U_S(t_i, m_j, a_k) &= U_R(t_i, m_j, a_k)
+\end{align}
+
+Hierarchical prior:
+\begin{align}
+P(L) &= \left\{\begin{array}{l} \frac{\alpha}{4} \qquad \textnormal{if $L$ is compositional}\\
+\frac{1 - \alpha}{252} \qquad \textnormal{otherwise}\end{array}\right.
+%U_S(t_i, m_j, a_k) &= U_R(t_i, m_j, a_k)
+\end{align}
+
+Production for EU:
+\begin{align}
+P(s|m,L) &= \left\{\begin{array}{l} \frac{1}{|\{s | \textnormal{$m$ is true of $s$ in $L$}\}|} \qquad \textnormal{if $m$ is true of $s$ in $L$}\\
+\frac{\epsilon}{|\{s | \textnormal{$m$ is false of $s$ in $L$}\}|} \qquad \textnormal{otherwise}\end{array}\right.
+%U_S(t_i, m_j, a_k) &= U_R(t_i, m_j, a_k)
+\end{align}
+
+\paragraph{Results:} Compute probability matching and MAP for IL and RMD with iterated Bayesian learning. Save both last mutation and last replication as results.
+
+\section{Possibly add synchronic interaction}
+
+\section{Conclusion}
+
+
+
+\bibliographystyle{unsrtnat}
+
+\bibliography{../../../../../../tex/masternolinks}
+
+
+
+\end{document}
