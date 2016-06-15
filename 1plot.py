@@ -8,8 +8,8 @@ sns.set_context(rc={'lines.markeredgewidth': 0.5})
 import csv
 import sys
 
-f1 = csv.reader(open('./results/singlescalar-unwgh-mean-a1-c0.900000-l30-k14-g30-r100.csv','rt'))
-f2 = csv.reader(open('./results/1multiscalar-unwgh-mean-a1-c0.900000-l30-k14-g30-r100.csv','rt'))
+f1 = csv.reader(open('./results/singlescalar-wgh-mean-a1-c0.100000-l30-k9-g30-r100.csv','rt'))
+f2 = csv.reader(open('./results/1multiscalar-wgh-mean-a1-c0.100000-l30-k9-g30-r100.csv','rt'))
 
 def results_by_lexica_multi(f):
     p = np.zeros(6)
@@ -61,7 +61,7 @@ ax.margins(0.025, 0.025)
 #ax.text(.5,.9,'$\alpha$ = 1, c = %r, $\lambda$ = %r, pairs = %r, k = %r',
 #        horizontalalignment='center',
 #        transform=ax.transAxes) % (alpha, cost, lam, lexical_pairs, k)
-ax.set_title('Unweighted mutation. a = %r, c = %r, lam = %r, k = %r' % (1, .9, 30, 14))
+ax.set_title('Weighted mutation. a = %r, c = %r, lam = %r, k = %r' % (1, .1, 30, 9))
 
 #ax.set_ylim([ymin,ymax])
 plt.show()

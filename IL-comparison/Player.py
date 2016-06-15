@@ -1,9 +1,4 @@
-import operator
-import math, random
 import numpy as np
-import copy
-#import sys
-#            sys.exit('error')
 
 def normalize(m):
     m = m / m.sum(axis=1)[:, np.newaxis]

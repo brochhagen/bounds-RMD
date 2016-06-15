@@ -1,15 +1,9 @@
 import numpy as np
 #np.set_printoptions(threshold=np.nan)
 from itertools import product,permutations
-from random import choice
-from Player import Player
-from math import exp,sqrt
-import matplotlib.pyplot as plt
-import seaborn as sns
-sns.set_context(rc={'lines.markeredgewidth': 0.5})
+from random import choice,sample
+from player import Player
 import sys 
-from copy import copy
-from collections import defaultdict
 import datetime
 import csv
 
@@ -23,10 +17,10 @@ def norm(m):
 
 #lexicon = np.array([[1,0,1],[0,1,1]])
 s = 4 #number of states
-n = 3 #observation sequence length
-generations = 100 #generations per game
-games = 5 #amount of independent games
-alpha = 0.01 #bias parameter
+n = 10 #observation sequence length
+generations = 10000 #generations per game
+games = 1000 #amount of independent games
+alpha = 0.5 #bias parameter
 epsilon = 0.05
 mc = 1000 #amount of samples
 
@@ -35,7 +29,7 @@ f_il_samp_mean = csv.writer(open('./results/comparison-il-samp-mean-a%d-e%f-k%d-
 f_unwgh_samp_mean = csv.writer(open('./results/comparison-unwgh-samp-mean-a%d-e%f-k%d-g%d-r%d.csv' %(alpha,epsilon,n,generations,games),'wb')) 
 f_wgh_samp_mean = csv.writer(open('./results/comparison-wgh-samp-mean-a%d-e%f-k%d-g%d-r%d.csv' %(alpha,epsilon,n,generations,games),'wb')) 
 
-f_il_map_mean= csv.writer(open('./results/comparison-il-samp-map-a%d-e%f-k%d-g%d-r%d.csv' %(alpha,epsilon,n,generations,games),'wb')) 
+f_il_map_mean= csv.writer(open('./results/comparison-il-map-mean-a%d-e%f-k%d-g%d-r%d.csv' %(alpha,epsilon,n,generations,games),'wb')) 
 f_unwgh_map_mean= csv.writer(open('./results/comparison-unwgh-map-mean-a%d-e%f-k%d-g%d-r%d.csv' %(alpha,epsilon,n,generations,games),'wb')) 
 f_wgh_map_mean = csv.writer(open('./results/comparison-wgh-map-mean-a%d-e%f-k%d-g%d-r%d.csv' %(alpha,epsilon,n,generations,games),'wb')) 
 
@@ -92,11 +86,18 @@ print '#Computing likelihood, ', datetime.datetime.now()
 likelihoods = np.array([h.senderMatrix() for h in [Player(s,epsilon) for s in hypotheses]])
 
 
+
 def get_obs(k):
     inputx = [x for x in list(product(range(4), repeat=k)) if sum(x) == k] #k-tuple where the i-th observed state was state k_i 
     outputy = [y for y in list(product(range(4),repeat=k)) if sum(y) == k] #k-tuple where the i-th produced message was k_i 
-    D = list(product(inputx,outputy))
-    if k > 4: D = [choice(D) for _ in range(mc)]
+    if k > 4:
+#	D = [(choice(inputx),choice(inputy)) for _ in xrange(mc)]
+	prod = len(inputx) * len(outputy)
+	indices = sample(xrange(prod), mc)
+	D = [(inputx[idx % len(inputx)], outputy[idx // len(inputx)]) for idx in indices]
+    else:
+	D = list(product(inputx,outputy))
+
     
     out = []
     for i in range(len(D)):
@@ -203,7 +204,8 @@ p_prior = prior
 ###Multi games####
 
 for i in range(games):
-    print '#generation of game', i, datetime.datetime.now()
+    print '#game', i, datetime.datetime.now()
+    print '#game', i, 'IL-sample', datetime.datetime.now()
 
 
     p = np.random.dirichlet(np.ones(len(hypotheses))) # unbiased random starting state
@@ -213,6 +215,7 @@ for i in range(games):
 
     p_il_samp_sum += p
 
+    print '#game', i, 'unweighted-sample', datetime.datetime.now()
 
     p = np.random.dirichlet(np.ones(len(hypotheses))) # unbiased random starting state
 
@@ -223,6 +226,8 @@ for i in range(games):
 
     p_unwgh_samp_sum += p
 
+    print '#game', i, 'weighted-sample', datetime.datetime.now()
+
     p = np.random.dirichlet(np.ones(len(hypotheses))) # unbiased random starting state
 
     for r in range(generations):  #weighted (community) mutation
@@ -232,6 +237,9 @@ for i in range(games):
 
     p_wgh_samp_sum += p
 #MAP
+
+    print '#game', i, 'IL-MAP', datetime.datetime.now()
+
     p = np.random.dirichlet(np.ones(len(hypotheses))) # unbiased random starting state
 
     for r in range(generations):
@@ -239,6 +247,7 @@ for i in range(games):
 
     p_il_map_sum += p
 
+    print '#game', i, 'unweighted-MAP', datetime.datetime.now()
 
     p = np.random.dirichlet(np.ones(len(hypotheses))) # unbiased random starting state
 
@@ -248,6 +257,8 @@ for i in range(games):
         p = np.dot(pPrime, q_map)
 
     p_unwgh_map_sum += p
+
+    print '#game', i, 'weighted-MAP', datetime.datetime.now()
 
     p = np.random.dirichlet(np.ones(len(hypotheses))) # unbiased random starting state
 

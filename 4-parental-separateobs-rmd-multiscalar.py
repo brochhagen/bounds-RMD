@@ -4,12 +4,15 @@
 #2 possible signaling behaviors: literal or gricean
 #12 types (6 lexica * 2 signaling behaviors) per signaling pair
 #6*6*6 = 216  literal types, 216 gricean types, 432 types in total
+#Set of observations of length k:
+##Sample <s,m> tuples from a type's production probabilities, P(a = <s,m> | t_i) = P(s) * P(m|s,t_i)
+#
 #####
 
 
 import numpy as np
 #np.set_printoptions(threshold=np.nan)
-from random import sample
+from random import sample,choice
 from itertools import product, permutations, combinations_with_replacement
 from player import LiteralPlayer,GriceanPlayer
 import sys 
@@ -18,24 +21,30 @@ import csv
 
 
 alpha = 1 # rate to control difference between semantic and pragmatic violations
-cost = 0.9 # cost for LOT-concept with upper bound
+cost = 0.4 # cost for LOT-concept with upper bound
 lam = 30 # soft-max parameter
-k = 3  # number of learning observations
-mc = 1000 #amount of samples from OBS when k > 4
+k = 10  # observation sequence length 
+sample_amount = 100 #amount of samples per type production
 
-gens = 30 #number of generations per simulation run
+gens = 50 #number of generations per simulation run
 runs = 100 #number of independent simulation runs
-
 
 lexical_pairs = 3 #number of 2x2 matrices
 states = 2 #number of states
 messages = 2 #number of messages
 
+learning_parameter = 5 #prob-matching = 1, increments approach MAP
 
-f_unwgh_mean = csv.writer(open('./results/multiscalar-unwgh-mean-a%d-c%f-l%d-k%d-g%d-r%d.csv' %(alpha,cost,lam,k,gens,runs),'wb')) #file to store each unweighted simulation run after n generations
-f_wgh_mean = csv.writer(open('./results/multiscalar-wgh-mean-a%d-c%f-l%d-k%d-g%d-r%d.csv' %(alpha,cost,lam,k,gens,runs),'wb')) #file to store each weighted simulation run after n generations
+state_freq = np.ones(states*lexical_pairs) / float(states*lexical_pairs) #frequency of states. 
+w_communal,w_parental = 0.5,0.5 #w_communal is the weight for communal learning, w_parental that of parental learning, w_communcal + w_parental = 1
 
-f_q = csv.writer(open('./results/multiscalar-q-matrix-a%d-c%f-l%d-k%d-g%d-r%d.csv' %(alpha,cost,lam,k,gens,runs),'wb')) #file to store Q-matrix
+
+
+
+f_unwgh_mean = csv.writer(open('./results/4multiscalar-unwgh-mean-a%d-c%f-l%d-k%d-g%d-r%d-samp%d.csv' %(alpha,cost,lam,k,gens,runs,learning_parameter),'wb')) #file to store each unweighted simulation run after n generations
+#f_wgh_mean = csv.writer(open('./results/4multiscalar-wgh-mean-a%d-c%f-l%d-k%d-g%d-r%d-samp%d.csv' %(alpha,cost,lam,k,gens,runs, learning_parameter),'wb')) #file to store each weighted simulation run after n generations
+
+f_q = csv.writer(open('./results/4multiscalar-q-matrix-a%d-c%f-l%d-k%d-g%d-r%d-samp%d.csv' %(alpha,cost,lam,k,gens,runs, learning_parameter),'wb')) #file to store Q-matrix
 
 
 print '#Starting, ', datetime.datetime.now()
@@ -68,41 +77,9 @@ def lex_prior(l):
 lex_prior = lex_prior(lexica)
 lexica_prior = lex_prior / sum(lex_prior)
 
-#def labels_by_bound(prior_list):
-#    """Outputs list of labels by lexicalized bounds from learning prior vector."""
-#    unique_vals = sorted(list(set(prior_list))) #sorted just in case
-#    labels = []
-#    for i in unique_vals:
-#        labels.append([j for j,x in enumerate(prior_list) if x == i])
-#    return labels
-#bound_labels = labels_by_bound(lexica_prior)
 
 print '#Computing likelihood, ', datetime.datetime.now()
 likelihoods = np.array([t.sender_matrix for t in typeList])
-
-def m_permutation(m,n):
-    """Returns matrix n-permutation. Used to reuse likelihood matrix computed for a single scalar pair"""
-    r,c = m.shape
-
-    arr_i = np.array(list(product(range(r), repeat=n)))
-    arr_j = np.array(list(product(range(c), repeat=n)))
-
-    out = m.ravel()[(arr_i*c)[:,None,:] + arr_j].prod(2)
-    return out
-
-#def m_combination(m,n):
-## Get input array's shape
-#    r,c = m.shape
-#
-#    # Setup arrays corresponding to labels i and j
-#    arr_i = np.array(list(combinations_with_replacement(range(r), n)))
-#    arr_j = np.array(list(combinations_with_replacement(range(c), n)))
-#
-## Use linear indexing with ".ravel()" to extract elements.
-## Perform elementwise product along the rows for the final output
-#    out = m.ravel()[(arr_i*c)[:,None,:] + arr_j].prod(2)
-#    return out
-
 
 def labels(s,m,lex):
     """Returns list of labels that specifies which lexica are assigned to what type."""
@@ -119,65 +96,94 @@ def normalize(m):
     """Matrix row-wise normalization"""
     return m / m.sum(axis=1)[:, np.newaxis]
 
+
+def summarize_counts(lst,k):
+    """summarize counts for tuples of k-states and k-messages""" 
+    counter = [0 for _ in xrange(states**messages * lexical_pairs)]
+    for i in xrange(len(lst)):
+        s,m = lst[i][0] *2, lst[i][1]
+        counter[s+m] += 1
+    return counter
+
 def get_obs(k):
-    """Returns summarized counts of k-length <s_i,m_j> observations as [#(<s_0,m_0>), #(<s_0,m_1), #(<s_1,m_0>, #(s_1,m_1)], sum[...] = k"""
-    inputx = [x for x in list(product(range(states), repeat=k))] #k-tuple where the i-th observed state was state k_i 
-    outputy = [y for y in list(product(range(messages),repeat=k))] #k-tuple where the i-th observed message was k_i 
-    D = list(product(inputx,outputy)) #list of all possible state-message combinations
-    if k > 4: D = sample(D,mc) #sample from D if sequence > 4 to manage computational load
-    
-    out = []
-    for i in range(len(D)): #this can probably be made more succint but it's a straightforward way to summarize counts
-        s0m0 = 0
-        s0m1 = 0
-        s1m0 = 0
-        s1m1 = 0
-        for j in range(k):
-            if D[i][0][j] == 0:
-                if D[i][1][j] == 0:
-                    s0m0 += 1
-                else: 
-                    s0m1 += 1
-            else:
-                if D[i][1][j] == 0:
-                    s1m0 += 1
-                else:
-                    s1m1 += 1
-        out.append([s0m0,s0m1,s1m0,s1m1])
-    return out
+    """Returns summarized counts of k-length <s_i,m_j> production observations as [#(<s_0,m_0>), #(<s_0,m_1), #(<s_1,m_0>, #(s_1,m_1)], ...]] = k"""
+    s = list(xrange(states*lexical_pairs))
+    m = list(xrange(messages))
+    atomic_observations = list(product(s,m))
+   
+    obs = []
+    for idx in xrange(len(labels)):
+        t_obs = []
+        l0,l1,l2 = labels[idx][0],labels[idx][1],labels[idx][2]
+        production_vector = np.append(np.append(likelihoods[l0],likelihoods[l1]),likelihoods[l2]) #P(m|s,t_i)
+        doubled_state_freq = np.column_stack((state_freq,state_freq)).flatten() # P(s)
+        sample_vector = production_vector * doubled_state_freq #P(s) * P(m|s,t_i)
+        for i in xrange(sample_amount):
+            sample_idx = [np.random.choice(len(atomic_observations),p=sample_vector) for _ in xrange(k)]
+            sampled_obs = [atomic_observations[i] for i in sample_idx]
+            t_obs.append(summarize_counts(sampled_obs,k))
+        obs.append(t_obs)
+    return obs
 
 
 def get_obs_likelihood(k):
-    obs = get_obs(k)
-    out1 = np.ones([len(likelihoods)/2, len(obs)]) # matrix to store results in for literal
-    out2 = np.ones([len(likelihoods)/2, len(obs)]) # matrix to store results in for gricean
-    #Literal and gricean are not computed in a single matrix because combination of lexica should be within a signaling behavior.
+    print 'Getting obs', datetime.datetime.now()
+    all_obs = get_obs(k)
 
-    for lhi in range(len(likelihoods)/2):
-        for o in range(len(obs)):
-            out1[lhi,o] = (likelihoods[lhi,0,0]**obs[o][0] * (likelihoods[lhi,0,1])**(obs[o][1]) *\
-                         likelihoods[lhi,1,0]**obs[o][2] * (likelihoods[lhi,1,1])**(obs[o][3]))
-            out2[lhi,o] = (likelihoods[lhi+len(likelihoods)/2,0,0]**obs[o][0] * (likelihoods[lhi+len(likelihoods)/2,0,1])**(obs[o][1]) *\
-                         likelihoods[lhi+len(likelihoods)/2,1,0]**obs[o][2] * (likelihoods[lhi+len(likelihoods)/2,1,1])**(obs[o][3]))
-    
-    pOut1 = m_permutation(out1,lexical_pairs) #combine literal lexica
-    pOut2 = m_permutation(out2,lexical_pairs) #combine gricean lexica
-    lh = np.concatenate((normalize(pOut1),normalize(pOut2)),axis=0) #Glue literal and gricean matrices after combinations
-    return lh
+    print 'Computing likelihood', datetime.datetime.now()
+    out = np.zeros([len(labels), len(all_obs[0])]) # matrix to store results in
+
+    for lhi in xrange(len(labels)):
+        l0,l1,l2 = labels[lhi][0],labels[lhi][1],labels[lhi][2]
+        obs = all_obs[lhi]
+        for o in xrange(len(obs)):
+#            print obs[o], lhi, o
+            out[lhi,o] = (likelihoods[l0,0,0]**obs[o][0] * (likelihoods[l0,0,1])**(obs[o][1]) *\
+                           likelihoods[l0,1,0]**obs[o][2] * (likelihoods[l0,1,1])**(obs[o][3]) *\
+                           likelihoods[l1,0,0]**obs[o][4] * (likelihoods[l1,0,1])**(obs[o][5]) *\
+                           likelihoods[l1,1,0]**obs[o][6] * (likelihoods[l1,1,1])**(obs[o][7]) *\
+                           likelihoods[l2,0,0]**obs[o][8] * (likelihoods[l2,0,1])**(obs[o][9]) *\
+                           likelihoods[l2,1,0]**obs[o][10] * (likelihoods[l2,1,1])**(obs[o][11]))
 
 
-def get_mutation_matrix(k):
+    r,c = out.shape
+    print 'Likelihood computed. Shape:', r, 'rows and',c ,'columns', datetime.datetime.now()
+    return normalize(out)
+
+likelihood_matrix = get_obs_likelihood(k)
+
+sys.exit()
+
+def get_mutation_matrix(lhs,k):
     # we want: Q_ij = \sum_d p(d|t_i) p(t_j|d); this is the dot-product of the likelihood matrix and the posterior
-    lhs = get_obs_likelihood(k)
     post = normalize(lexica_prior * np.transpose(lhs))
-    return np.dot(lhs, post)
+    return normalize(np.dot(lhs, post)**learning_parameter)
 
-def weighted_mutation(p,q):
+def population_learn_vector(lhs,p):
+    #L_j = \sum_d P(d|\vec{p}) * P(t_j|d), where P(d|\vec{p}) = \sum_t_i P(d|t_i) * p_i
+    r,c = lhs.shape
+    out = np.zeros(r)
+    post = normalize(lexica_prior * np.transpose(lhs))
+
+    for i in xrange(r):
+        for d in xrange(c):
+            sum_t = 0
+            for t in xrange(r):
+                sum_t += lhs[t,d] * p[t]
+            
+            out[i] += sum_t * post[d,i]
+    return out
+
+
+
+def weighted_mutation(p,q,w1,w2):
     """Mutation by community learning instead of standard mutation"""
     m = np.zeros([len(p),len(p)])
+
+    pop_learn_vector = population_learn_vector(likelihood_matrix,p)
     for i in range(len(p)):
         for j in range(len(p)):
-            m[i,j] = p[j] * q[i,j]
+            m[i,j] = (w1 * pop_learn_vector[j]) + (w2 * q[i,j])
     return normalize(m)
 
 def get_utils():
@@ -198,7 +204,7 @@ def get_utils():
 
 print '#Computing Q, ', datetime.datetime.now()
 
-q = get_mutation_matrix(k)
+q = get_mutation_matrix(likelihood_matrix,k)
 
 for i in q:
     f_q.writerow(i)
@@ -210,11 +216,8 @@ u = get_utils()
 ###Multiple runs
 print '#Beginning multiple runs, ', datetime.datetime.now()
 
-
-
 f_unwgh_mean.writerow(["stype","l1","l2","l3","proportion"])
-f_wgh_mean.writerow(["stype","l1","l2","l3","proportion"])
-
+#f_wgh_mean.writerow(["stype","l1","l2","l3","proportion"])
 
 p_sum = np.zeros(len(labels))
 p_sum_wgh = np.zeros(len(labels))
@@ -230,20 +233,20 @@ for i in xrange(runs):
 
     p_sum += p
 
-    p = np.random.dirichlet(np.ones(len(labels))) # unbiased random starting state
-
-    for r in range(gens):  #weighted (community) mutation
-        pPrime = p * [np.sum(u[t,] * p)  for t in range(len(labels))]
-        pPrime = pPrime / np.sum(pPrime)
-        p = np.dot(pPrime, weighted_mutation(p,q))
-
-    p_sum_wgh += p
+#    p = np.random.dirichlet(np.ones(len(labels))) # unbiased random starting state
+#
+#    for r in range(gens):  #weighted (community) mutation
+#        pPrime = p * [np.sum(u[t,] * p)  for t in range(len(labels))]
+#        pPrime = pPrime / np.sum(pPrime)
+#        p = np.dot(pPrime, weighted_mutation(p,q,w_communal,w_parental))
+#
+#    p_sum_wgh += p
 
     print i, datetime.datetime.now()
     
     
 p_mean = p_sum / runs
-p_wgh_mean = p_sum_wgh / runs
+#p_wgh_mean = p_sum_wgh / runs
 
 def record_by_type(p_vec,csv_file):
     for i in range(len(p_vec)):
@@ -258,7 +261,7 @@ def record_by_type(p_vec,csv_file):
         csv_file.writerow([stype,l1,l2,l3,str(p_vec[i])])
 
 record_by_type(p_mean,f_unwgh_mean)
-record_by_type(p_wgh_mean,f_wgh_mean)
+#record_by_type(p_wgh_mean,f_wgh_mean)
 
 
 def lexica_vec(p_vec): 
@@ -276,8 +279,6 @@ def lexica_vec(p_vec):
 
 print '### Quick overview of results###'
 print 'Unweighted mean by lexica:', lexica_vec(p_mean)
-print '###'
-print 'Weighted mean by lexica:', lexica_vec(p_wgh_mean)
-sys.exit()
-
-
+print 'Parameters: k = %d, number of samples per type = %d, bias c = %.2f, alpha = %d, lambda = %d, learning_parameter = %d, generations = %d, runs = %d' % (k, sample_amount,cost, alpha, lam, learning_parameter, gens, runs)
+#print '###'
+#print 'Weighted mean by lexica:', lexica_vec(p_wgh_mean)

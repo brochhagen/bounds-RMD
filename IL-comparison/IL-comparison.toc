@@ -1,15 +1,4 @@
-\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
-\contentsline {section}{\numberline {2}Components of RMD}{3}{section.2}
-\contentsline {subsection}{\numberline {2.1}Interpretation of components}{3}{subsection.2.1}
-\contentsline {paragraph}{Fitness}{4}{section*.2}
-\contentsline {paragraph}{Mutation}{4}{section*.3}
-\contentsline {subparagraph}{Prior}{4}{section*.4}
-\contentsline {subparagraph}{Data}{4}{section*.5}
-\contentsline {subparagraph}{Learning}{4}{section*.6}
-\contentsline {section}{\numberline {3}Comparisons}{4}{section.3}
-\contentsline {subsection}{\numberline {3.1}Comparison to IL}{4}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}MAP and RD without M}{4}{subsection.3.2}
-\contentsline {section}{\numberline {4}Toy example}{4}{section.4}
-\contentsline {paragraph}{Results:}{5}{section*.7}
-\contentsline {section}{\numberline {5}Possibly add synchronic interaction}{5}{section.5}
-\contentsline {section}{\numberline {6}Conclusion}{5}{section.6}
+\contentsline {section}{\numberline {1}Toy example}{1}{section.1}
+\contentsline {paragraph}{Results:}{2}{section*.2}
+\contentsline {section}{\numberline {2}Possibly add synchronic interaction}{2}{section.2}
+\contentsline {section}{\numberline {3}Conclusion}{2}{section.3}
