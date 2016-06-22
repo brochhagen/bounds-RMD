@@ -65,7 +65,7 @@ The plan is to expand our work on the semantics/pragmatics divide by means of a 
 
 \subparagraph{(III) Observations as production.} Instead of taking the space of all possible sequences of length $k$ into consideration, we take sample from $O$ $k$-times according to the production probabilities of each type; $P(o = \tuple{s,m} | t_i) = P(s) P(m|s,t_i)$. $n$ such $k$-length sequences are sampled for each type. As a consequence, the data used for computing $Q_i$ is not the same as that used for $j$ $(i \neq j)$.
 
-\subparagraph{(IV) Parametrized learning} $Q_{ij} \propto [\sum_d P(d|t_i) P(t_j|d)]^l$, where $l =1$ corresponds to probability matching and, as $l$ increases towards infinity, to MAP.  	      
+\subparagraph{(IV) Parametrized learning} $Q_{ij} \propto \sum_d P(d|t_i) F(t_j,d)$, where $F(t_j,d) \propto P(t_j|d)^l$ and $l =1$ corresponds to probability matching and, as $l$ increases towards infinity, to MAP.  	      
 
 \section{Further modifications we may want to keep in mind (but currently don't make use of)}
 \subparagraph{(I) Cost for pragmatic reasoning.} At least in the CogSci setup the effect of adding cost to pragmatic reasoning is unsurprising: High cost for pragmatic signaling lowers the prevalence of pragmatic types. Lexica that semantically encode an upper-bound benefit the most from this. However, the cost needed to be substantial to make the pragmatic English-like lexicon stop being the incumbent type (particularly when learning is communal). 
