@@ -18,7 +18,7 @@ import csv
 #####
 l1,l2,l3,l4,l5,l6 = np.array( [[0.,0.],[1.,1.]] ), np.array( [[1.,1.],[0.,0.]] ), np.array( [[1.,1.],[1.,1.]] ), np.array( [[0.,1.],[1.,0.]] ), np.array( [[0.,1.],[1.,1.]] ), np.array( [[1.,1.],[1.,0.]] )
 
-alpha = 1# rate to control difference between semantic and pragmatic violations
+alpha = 1 # rate to control difference between semantic and pragmatic violations
 cost = 0.1 # cost for LOT-concept with upper bound
 lam = 10 # soft-max parameter
 k = 3  # length of observation sequences
@@ -101,9 +101,13 @@ def get_mutation_matrix(k):
         lhs = get_likelihood(type_obs) #P(parent data|t_i) for all types
         post = normalize(lexica_prior * np.transpose(lhs)) #P(t_j|parent data) for all types; P(d|t_j)P(t_j)
         parametrized_post = normalize(post**learning_parameter)
-        parent_production_q = np.dot(lhs,parametrized_post)
-        
-        out[parent_type] = parent_production_q[parent_type] #store the parents row Q_{parent_type}
+
+        ## TB original:
+        #parent_production_q = np.dot(lhs,parametrized_post)
+        #out[parent_type] = parent_production_q[parent_type] #store the parents row Q_{parent_type}
+
+        ## MF alternative:
+        out[parent_type] = np.dot(np.transpose(lhs[parent_type]),parametrized_post)
 
     return normalize(out)
 
