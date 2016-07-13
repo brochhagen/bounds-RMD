@@ -1,30 +1,27 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {paragraph}{Semantics-pragmaits distinction and where the puzzle arises.}{1}
-\contentsline {paragraph}{Description of plan to lay out model and test it on upper-bounds.}{1}
-\contentsline {section}{\numberline {2}Cultural transmission \& linguistic pressures}{1}
-\contentsline {paragraph}{Overview of generally assumed linguistic pressures.}{1}
+\contentsline {section}{\numberline {2}Linguistic structure \& selectional dynamics}{2}
 \contentsline {subsection}{\numberline {2.1}Probabilistic models of language use}{2}
 \contentsline {paragraph}{Language (fragments).}{2}
-\contentsline {paragraph}{Signaling behavior.}{2}
-\contentsline {subsection}{\numberline {2.2}Expressiveness}{2}
-\contentsline {paragraph}{Symmetrized expected utility.}{2}
-\contentsline {subsection}{\numberline {2.3}Learnability}{2}
-\contentsline {subparagraph}{(II) Sequences and atomic observations.}{2}
-\contentsline {subparagraph}{(III) Observations as production.}{2}
-\contentsline {subparagraph}{(IV) Parametrized learning}{2}
-\contentsline {subsection}{\numberline {2.4}Summary}{3}
-\contentsline {paragraph}{Procedural description.}{3}
-\contentsline {section}{\numberline {3}Upper-bounds in weak scalar alternatives}{3}
-\contentsline {subsection}{\numberline {3.1}Analysis}{3}
-\contentsline {paragraph}{Languages.}{3}
-\contentsline {subsection}{\numberline {3.2}Model parameters \& procedure}{3}
-\contentsline {section}{\numberline {4}Discussion}{4}
-\contentsline {subparagraph}{(I) Cost for pragmatic reasoning.}{4}
-\contentsline {subparagraph}{(II) Negative learning bias.}{4}
-\contentsline {subparagraph}{(III) Inductive bias.}{4}
-\contentsline {subparagraph}{(IV) Uncertainty.}{4}
-\contentsline {subparagraph}{(V) More scalar pairs.}{4}
-\contentsline {subparagraph}{(VI) More lexica.}{4}
-\contentsline {subparagraph}{(VII) State frequencies.}{4}
-\contentsline {subparagraph}{(VIII) Reintroduction of communal learning.}{4}
-\contentsline {section}{\numberline {5}Conclusion}{4}
+\contentsline {paragraph}{Signaling behavior.}{3}
+\contentsline {subsection}{\numberline {2.2}Expressiveness}{3}
+\contentsline {paragraph}{Symmetrized expected utility.}{3}
+\contentsline {subsection}{\numberline {2.3}Learnability}{3}
+\contentsline {subparagraph}{(II) Sequences and atomic observations.}{3}
+\contentsline {subparagraph}{(III) Observations as production.}{3}
+\contentsline {subparagraph}{(IV) Parametrized learning}{3}
+\contentsline {subsection}{\numberline {2.4}Summary}{4}
+\contentsline {paragraph}{Procedural description.}{4}
+\contentsline {section}{\numberline {3}Upper-bounds in weak scalar alternatives}{4}
+\contentsline {subsection}{\numberline {3.1}Analysis}{4}
+\contentsline {paragraph}{Languages.}{4}
+\contentsline {subsection}{\numberline {3.2}Model parameters \& procedure}{4}
+\contentsline {section}{\numberline {4}Discussion}{5}
+\contentsline {subparagraph}{(I) Cost for pragmatic reasoning.}{5}
+\contentsline {subparagraph}{(II) Negative learning bias.}{5}
+\contentsline {subparagraph}{(III) Inductive bias.}{5}
+\contentsline {subparagraph}{(IV) Uncertainty.}{5}
+\contentsline {subparagraph}{(V) More scalar pairs.}{5}
+\contentsline {subparagraph}{(VI) More lexica.}{5}
+\contentsline {subparagraph}{(VII) State frequencies.}{5}
+\contentsline {subparagraph}{(VIII) Reintroduction of communal learning.}{5}
+\contentsline {section}{\numberline {5}Conclusion}{6}

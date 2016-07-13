@@ -2,6 +2,7 @@
 
 \usepackage{geometry}
 \usepackage{natbib}
+\bibpunct[,]{(}{)}{,}{a}{}{;}
 
 %--------------------
 \usepackage{gb4e}
@@ -44,29 +45,52 @@
 \begin{document}
 \maketitle
 \tableofcontents
-\section{Introduction}
-While there is disagreement on where its boundaries lie, a distinction between semantics and pragmatics is commonly agreed upon by linguists. Broadly put, semantics can be viewed as concerning the literal, truth-conditional, meaning of expressions whereas pragmatics concerns information conveyed by expressions that goes beyond its literal meaning. Consider, for instance, the following sentence
+\section{Introduction}\label{sec:introduction}
+
+\hl{some general sentence here}
+In linguistic theorizing, it is common to draw a distinction between semantics and pragmatics. Broadly speaking, semantics concerns the truth-conditional content of expressions, whereas pragmatics deals with information beyond such literal meanings. For instance, the integration of context and the derivation of defeasible inferences. Thus, the information conveyed is seldom if ever solely determined by semantics, but rather by its pragmatic enrichment. The present investigation addresses the selection of particular semantics over others in light of pragmatics. %  the semantics-pragmatics distinction raises the challenge of justifying the former's structure. 
+
+Consider, for instance, the utterance {\em Bill read five books}. Truth-conditionally, this utterance does not set an upper-bound for the amount of books that Bill read; he may have read six, seven, or more books. Pragmatically, however, an addressee who assumes the speaker to be cooperative and knowledgeable may draw the (defeasible) inference that {\em Bill read no more than five books}. After all, had he read more, for example, six books, and the speaker had known this, she would have said {\em Bill read six books} instead. In this way, what is conveyed (pragmatically) goes beyond what is (literally) said \citep{grice:1975}. 
+
+Much research in semantics and pragmatics has been aimed at characterizing the information conveyed by classes of expressions, such as numerals, in terms of either domain, or their interplay. Thus, while there is disagreement on where their boundary lies, their distinction remains a core (if tacit) assumption in linguistics. An issue that has received little attention, however, is the justification of semantic structure in view of pragmatics. Prima facie, under a functionalist view, is is puzzling that {\em Bill read five books} does not semantically rule out its more informative or ``stronger'' alternatives. Wouldn't it serve speakers of a language better if weak(er) expressions such as {\em warm}, {\em or}, {\em some} or {\em big} were not truth-conditionally compatible with stronger alternatives such as {\em hot}, {\em and}, {\em all} and {\em huge}, respectively? After all, this is what an interlocutor's pragmatically enriched interpretation yields in the case of so-called scalar inferences. Once a distinction between semantics and pragmatics is drawn, similar questions can be posed for other types of pragmatic inferences, such as ignorance inferences as (\ref{ex:ignorance}), or manner inferences such as (\ref{ex:manner-1}) and (\ref{ex:manner-2}).
 
 \begin{exe}
-\ex SI sentence \begin{xlist}
-	\ex Numeral n-1
-	\ex SI
+\ex\label{ex:ignorance} \begin{xlist}
+	\ex Bill read at least five books
+	\ex $\leadsto$ Bill read five or more books (but the speaker doesn't know how many)
 \end{xlist}
+\ex \label{ex:manner-1} \begin{xlist}
+	\ex Mercader killed Trotsky.
+	\ex $\leadsto$ Mercader killed Trotsky in a stereotypical way
+    \end{xlist}
+\ex \label{ex:manner-2} \begin{xlist} \ex Mercader caused Trotsky to die
+		  \ex $\leadsto$ Mercader killed Trotsky in a non-stereotypical way
+    \end{xlist}
 \end{exe}
 
-%Note first, that the literal meaning of {\em NUMERAL} is compatible with that of more informative or ``stronger'' alternatives such as {\em n+1, n+1} and so on. 
+
+In more general terms, the question then is what motivates the selection of particular semantic structures over other hypothetical alternatives in light of pragmatics. While a number of recent investigations have began to address issues pertaining to the development and selection of linguistic features, the semantics-pragmatics distinction has received little attention (see \citealt{steels:2015} and \citealt{tamariz+kirby:2016} for recent overviews). Our starting point is given by the overarching account of competing pressures that crystallizes across different frameworks: Natural languages need to allow for successful communication, one the one hand, and be well suited for acquisition on the other. Put differently, languages need to be well-adapted to the communicative needs within a linguistic community, and be learnable to survive their faithful transmission across generations. 
+
+ \hl{Description of plan to lay out model and test it on upper-bounds.}
+
+
+\hl{general notes on cultural evolution, biological evolution, and their connection}
 
 
 
 
-\paragraph{Semantics-pragmaits distinction and where the puzzle arises.}
+\section{Linguistic structure \& selectional dynamics}
+The emergence and change of linguistic structure is driven by many factors, from biological and socio-ecological to cultural \citep{steels:2011,tamariz+kirby:2016}. Broadly put, social and ecological pressures determine communicative needs, while biology determines the architecture available for its use. Our focus is on the latter, cultural, factor, wherein linguistic structure is analyzed in terms of its use, as well as its transmission across generations. 
 
-\paragraph{Description of plan to lay out model and test it on upper-bounds.}
+As already mentioned in \S\ref{sec:introduction}, research on selectional forces that apply in the cultural evolution of language has focused on two main pressures: expressivity and learnability. However, while it is generally acknowledged that both play a pivotal role, past approaches have focused exclusively, or at least emphasized, the role of one over the other (a recent exception is \citealt{kirby+etal:2015}). 
+
+Expressiveness, or communicative efficiency, has been at the center of applications of evolutionary game theory to linguistics \citep{nowak+krakauer:1999,huttegger+zollman:2013},  \hl{explain RMD}
+
+as well as \hl{Luc Steels stuff}.
+
+In contrast, the iterated learning paradigm has focused on the effects of language transmission from generations of speakers to the next. \hl{explain IL}
 
 
-\section{Cultural transmission \& linguistic pressures}
-
-\paragraph{Overview of generally assumed linguistic pressures.} \hl{Focus has been put mainly on one over the other, even though it is mutually accepted that both are important. We involve both and connect this research to the rational probabilistic interlocutors literature}
 
 \subsection{Probabilistic models of language use}
 

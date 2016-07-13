@@ -34,7 +34,10 @@ learning_parameter = 1 #prob-matching = 1, increments approach MAP
 state_freq = np.ones(states) / float(states) #frequency of states s_1,...,s_n 
 
 
-f_mean = csv.writer(open('./results/singlescalar-mean-a%d-c%.2f-l%d-k%d-samples%d-learn%.2f-g%d-r%d.csv' %(alpha,cost,lam,k,sample_amount, learning_parameter, gens,runs),'wb')) #file to store mean results
+f = csv.writer(open('./results/singlescalar-a%d-c%.2f-l%d-k%d-samples%d-learn%.2f-g%d-r%d.csv' %(alpha,cost,lam,k,sample_amount, learning_parameter, gens,runs),'wb')) #file to store mean results
+
+f.writerow(["run_ID", "t1_initial", "t2_initial","t3_initial","t4_initial","t5_initial","t6_initial","t7_initial","t8_initial","t9_initial","t10_initial","t11_initial","t12_initial","alpha", "prior_cost_c", "lambda", "k", "sample_amount", "learning_parameter", "generations", "t1_final", "t2_final","t3_final","t4_final","t5_final","t6_final","t7_final","t8_final","t9_final","t10_final","t11_final","t12_final"])
+
 ######
 
 
@@ -102,11 +105,6 @@ def get_mutation_matrix(k):
         post = normalize(lexica_prior * np.transpose(lhs)) #P(t_j|parent data) for all types; P(d|t_j)P(t_j)
         parametrized_post = normalize(post**learning_parameter)
 
-        ## TB original:
-        #parent_production_q = np.dot(lhs,parametrized_post)
-        #out[parent_type] = parent_production_q[parent_type] #store the parents row Q_{parent_type}
-
-        ## MF alternative:
         out[parent_type] = np.dot(np.transpose(lhs[parent_type]),parametrized_post)
 
     return normalize(out)
@@ -127,34 +125,25 @@ u = get_utils()
 ###Multiple runs
 print '#Beginning multiple runs, ', datetime.datetime.now()
 
-f_mean.writerow(["sig_behavior","lexicon","proportion"])
 p_sum = np.zeros(len(typeList)) #vector to store results from a run
 
 for i in xrange(runs):
     q = get_mutation_matrix(k) #compute new Q for each new run, as it now depends on sampled observations
     p = np.random.dirichlet(np.ones(len(typeList))) # unbiased random starting state
+    p_initial = p
 
     for r in range(gens):
         pPrime = p * [np.sum(u[t,] * p)  for t in range(len(typeList))]
         pPrime = pPrime / np.sum(pPrime)
         p = np.dot(pPrime, q)
+    f.writerow([str(i),str(p_initial[0]), str(p_initial[1]), str(p_initial[2]), str(p_initial[3]), str(p_initial[4]), str(p_initial[5]), str(p_initial[6]), str(p_initial[7]), str(p_initial[8]), str(p_initial[9]), str(p_initial[10]), str(p_initial[11]), str(k), str(sample_amount), str(learning_parameter), str(gens), str(p[0]), str(p[1]),str(p[2]),str(p[3]),str(p[4]),str(p[5]),str(p[6]),str(p[7]),str(p[8]),str(p[9]),str(p[10]),str(p[11])])
+
+
     p_sum += p
 
 p_mean = p_sum / runs
 
 
-def record_by_type(p_vec,csv_file):
-    for i in range(len(p_vec)):
-        if i < len(p_vec)/2:
-            stype = 'literal'
-        else: stype = 'gricean'
-        if i < len(p_vec)/2:
-            lexicon = i
-        else:
-            lexicon = i - len(p_vec)/2
-        csv_file.writerow([stype,str(lexicon),str(p_vec[i])])
-
-record_by_type(p_mean,f_mean)
 
 
 print '###Overview of results###', datetime.datetime.now()
@@ -162,16 +151,29 @@ print 'Parameters: alpha = %d, c = %.2f, lambda = %d, k = %d, samples per type =
 print 'Mean by type:'
 print p_mean
 
-
 sys.exit()
 
-def lexica_vec(p_vec): 
-    p_by_lexica = np.zeros(6)
-    for i in xrange(len(p_vec)):
-        if i < len(p_vec)/2:
-            p_by_lexica[i] += p_vec[i]
-        else:
-            r = i - len(p_vec)/2
-            p_by_lexica[r] += p_vec[i]
-    return p_by_lexica
+#def lexica_vec(p_vec): 
+#    p_by_lexica = np.zeros(6)
+#    for i in xrange(len(p_vec)):
+#        if i < len(p_vec)/2:
+#            p_by_lexica[i] += p_vec[i]
+#        else:
+#            r = i - len(p_vec)/2
+#            p_by_lexica[r] += p_vec[i]
+#    return p_by_lexica
+
+#def record_by_type(p_vec,csv_file):
+#    for i in range(len(p_vec)):
+#        if i < len(p_vec)/2:
+#            stype = 'literal'
+#        else: stype = 'gricean'
+#        if i < len(p_vec)/2:
+#            lexicon = i
+#        else:
+#            lexicon = i - len(p_vec)/2
+#        csv_file.writerow([stype,str(lexicon),str(p_vec[i])])
+#
+#record_by_type(p_mean,f_mean)
+
 
