@@ -20,7 +20,7 @@ l1,l2,l3,l4,l5,l6 = np.array( [[0.,0.],[1.,1.]] ), np.array( [[1.,1.],[0.,0.]] )
 
 alpha = 1 # rate to control difference between semantic and pragmatic violations
 cost = 0.1 # cost for LOT-concept with upper bound
-lam = 10 # soft-max parameter
+lam = 30 # soft-max parameter
 k = 3  # length of observation sequences
 sample_amount = 10 #amount of k-length samples for each production type
 
@@ -54,6 +54,7 @@ likelihoods = np.array([t.sender_matrix for t in typeList])
 
 lexica_prior = np.array([2, 2- 2* cost, 2, 2 - cost , 2 , 2-cost, 2, 2- 2* cost, 2, 2 - cost , 2 , 2-cost])
 lexica_prior = lexica_prior / sum(lexica_prior)
+
 
 def normalize(m):
     return m / m.sum(axis=1)[:, np.newaxis]

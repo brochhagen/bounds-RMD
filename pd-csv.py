@@ -21,6 +21,7 @@ all_files = glob.glob(os.path.join(path, "*.csv"))     # advisable to use os.pat
 df = pd.concat(pd.read_csv(f) for f in all_files)
 
 
+sys.exit()
 ###Plot 1###
 a = 1
 c = 0.2
