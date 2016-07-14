@@ -6,6 +6,7 @@ import seaborn as sns
 #sns.set_context(rc={'lines.markeredgewidth': 0.5})
 import os
 import glob
+import sys
 ###
 
 ###Column headers:###
@@ -183,4 +184,37 @@ ax.set(ylabel="proportion",xlabel='sequence length k')
 plt.legend(["$pragmatic_{10}$","$pragmatic_{11}$","$pragmatic_{12}$"], loc='best')
 
 plt.show()
+
+###
+a = 1
+#c = 0.3
+k = 5
+lam = 30
+sample = 15
+#learn = 4
+
+final_group = df.loc[:,('alpha','prior_cost_c','lambda','k','sample_amount','learning_parameter','t11_final')]
+
+group = final_group.loc[final_group['alpha'] == a]
+#group = group.loc[group['prior_cost_c'] == c]
+group = group.loc[group['k'] == k]
+group = group.loc[group['lambda'] == lam]
+group = group.loc[group['sample_amount'] == sample]
+#group = group.loc[group['learning_parameter'] == learn]
+
+def cust_mean(grp):
+    grp['mean'] = grp['t11_final'].mean()
+    return grp
+
+t11_final = group.groupby(['prior_cost_c', 'learning_parameter']).apply(cust_mean) #add new column with mean
+t11_rel = t11_final.loc[:,('prior_cost_c', 'learning_parameter','mean')] #ignore other columns, given that they are fixed
+t11_rel_uniq = t11_rel.drop_duplicates() #drop duplictes that arise from adding the mean column
+t11_rec = t11_rel_uniq.pivot('prior_cost_c','learning_parameter','mean') #reshape to have a prior_cost_c by learning_parameter table
+
+sns.set(font_scale=1.2)
+ax = sns.heatmap(t11_rec) 
+ax.set(ylabel='prior parameter c',xlabel='posterior parameter l', title=r'Pragmatic $L_5$ ($\alpha = %d, \lambda = %d, samples = %d, k = %d$)' %(a,lam,sample,k))
+ax.invert_yaxis()
+plt.show()
+
 
