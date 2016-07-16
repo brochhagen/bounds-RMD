@@ -44,15 +44,19 @@ t11_rel = t11_final.loc[:,('prior_cost_c', 'learning_parameter','mean')] #ignore
 t11_rel_uniq = t11_rel.drop_duplicates() #drop duplictes that arise from adding the mean column
 t11_rec = t11_rel_uniq.pivot('prior_cost_c','learning_parameter','mean') #reshape to have a prior_cost_c by learning_parameter table
 
+sns.set(font_scale=1.2)
 
 #yticks = np.arange(min(t11_rec.index),max(t11_rec.index),0.15)
-sns.set(font_scale=1.2)
-ax = sns.heatmap(t11_rec)#, yticklabels=yticks) 
+vacio = ["" for _ in xrange(9)]
+yticks = [0] + vacio + [0.1] + vacio + [0.2] + vacio + [0.3] + vacio + [0.4] + vacio + [0.5] + vacio + [0.6] + vacio + [0.7] + vacio + [0.8] + vacio + [0.9] + ["" for _ in xrange(8)] + [0.99]
+ax = sns.heatmap(t11_rec,yticklabels=yticks)#, yticklabels=yticks) 
 ax.set(ylabel='Prior parameter c',xlabel='Posterior parameter l', title=r'Pragmatic $L5$ ($\alpha = %d, \lambda = %d$, samples = %d, k = %d)' %(a,lam,sample,k))
-#plt.yticks(arange(5), (0,2,4,6,8), rotation=0)
+plt.yticks(rotation=0)
+
 ax.invert_yaxis()
 plt.show()
 
+sys.exit()
 
 ### development over cost ###
 
