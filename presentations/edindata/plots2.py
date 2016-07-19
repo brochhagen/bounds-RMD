@@ -109,6 +109,18 @@ plt.show()
 
 sys.exit()
 
+fig,axn = plt.subplots(1, 2, sharex=False, sharey=True)
+
+axn.flat[0] = sns.heatmap(t10_rec)
+axn.flat[1] = sns.heatmap(t11_rec)
+#for i, ax in enumerate(axn.flat):
+#    sns.heatmap(df, ax=ax,
+#                cbar=i == 0,
+#                vmin=0, vmax=1,
+#                cbar_ax=None if i else cbar_ax)
+
+fig.tight_layout(rect=[0, 0, .9, 1])
+plt.show()
 
 
 #### development over cost ###

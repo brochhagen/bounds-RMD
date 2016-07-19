@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.3)  16 JUL 2016 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.3)  18 JUL 2016 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1192,14 +1192,14 @@ LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <6> not available
  [4
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmss on input line 193
+LaTeX Font Info:    Try loading font information for OMS+lmss on input line 192
 .
-LaTeX Font Info:    No file OMSlmss.fd. on input line 193.
+LaTeX Font Info:    No file OMSlmss.fd. on input line 192.
 
 
 LaTeX Font Warning: Font shape `OMS/lmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 193.
+(Font)              for symbol `textbullet' on input line 192.
 
 [5
 
@@ -1213,80 +1213,140 @@ LaTeX Font Warning: Font shape `OMS/lmss/m/n' undefined
 
 ] [10
 
-] [11
-
 ]
-LaTeX Font Info:    Try loading font information for T3+lmss on input line 279.
+LaTeX Font Info:    Try loading font information for T3+lmss on input line 259.
 
-LaTeX Font Info:    No file T3lmss.fd. on input line 279.
+LaTeX Font Info:    No file T3lmss.fd. on input line 259.
 
 
 LaTeX Font Warning: Font shape `T3/lmss/m/n' undefined
-(Font)              using `T3/cmr/m/n' instead on input line 279.
+(Font)              using `T3/cmr/m/n' instead on input line 259.
 
 ! Missing { inserted.
 <to be read again> 
                    }
-l.279 \end{frame}
+l.259 \end{frame}
                  
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.279 \end{frame}
+l.259 \end{frame}
                  
 ? 
 ! Missing { inserted.
 <to be read again> 
                    }
-l.279 \end{frame}
+l.259 \end{frame}
                  
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.279 \end{frame}
+l.259 \end{frame}
+                 
+? 
+[11
+
+]
+
+LaTeX Warning: Command \; invalid in math mode on input line 280.
+
+
+LaTeX Warning: Command \; invalid in math mode on input line 280.
+
+
+LaTeX Warning: Command \; invalid in math mode on input line 280.
+
+
+LaTeX Warning: Command \; invalid in math mode on input line 280.
+
+! Missing { inserted.
+<to be read again> 
+                   }
+l.280 \end{frame}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.280 \end{frame}
+                 
+? 
+! Missing { inserted.
+<to be read again> 
+                   }
+l.280 \end{frame}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.280 \end{frame}
                  
 ? 
 [12
 
 ]
 
-LaTeX Warning: Command \; invalid in math mode on input line 301.
+LaTeX Warning: Command \; invalid in math mode on input line 307.
 
 
-LaTeX Warning: Command \; invalid in math mode on input line 301.
+LaTeX Warning: Command \; invalid in math mode on input line 307.
 
 
-LaTeX Warning: Command \; invalid in math mode on input line 301.
+LaTeX Warning: Command \; invalid in math mode on input line 307.
 
 
-LaTeX Warning: Command \; invalid in math mode on input line 301.
+LaTeX Warning: Command \; invalid in math mode on input line 307.
 
 
-LaTeX Warning: Command \; invalid in math mode on input line 301.
+! LaTeX Error: There's no line here to end.
 
-
-LaTeX Warning: Command \; invalid in math mode on input line 301.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 301.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 301.
-
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.307 \end{frame}
+                 
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.307 \end{frame}
+                 
+? 
+! Missing { inserted.
+<to be read again> 
+                   }
+l.307 \end{frame}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.307 \end{frame}
+                 
+? 
+! Missing { inserted.
+<to be read again> 
+                   }
+l.307 \end{frame}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.307 \end{frame}
+                 
+? 
 [13
 
 ] [14
 
 ] [15
 
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 330.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 330.
- [16
+] [16
 
 ] [17
 
@@ -1294,81 +1354,89 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
 
 ] [19
 
+] [20
+
+] [21
+
 ]
-<07fitness.png, id=165, 578.16pt x 397.485pt>
+<07fitness.png, id=174, 578.16pt x 397.485pt>
 File: 07fitness.png Graphic file (type png)
  <use 07fitness.png>
-Package pdftex.def Info: 07fitness.png used on input line 364.
-(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
- [20
-
- <./07fitness.png>] <07learning.png, id=173, 578.16pt x 397.485pt>
-File: 07learning.png Graphic file (type png)
- <use 07learning.png>
-Package pdftex.def Info: 07learning.png used on input line 370.
-(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
-
-[21
-
- <./07learning.png>] <03cost-with-l1.png, id=180, 578.16pt x 397.485pt>
-File: 03cost-with-l1.png Graphic file (type png)
-
-<use 03cost-with-l1.png>
-Package pdftex.def Info: 03cost-with-l1.png used on input line 377.
+Package pdftex.def Info: 07fitness.png used on input line 399.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
  [22
 
- <./03cost-with-l1.png>] [23
-
-] [24
-
-]
-<02cost-with-l3.png, id=197, 578.16pt x 397.485pt>
-File: 02cost-with-l3.png Graphic file (type png)
- <use 02cost-with-l3.png>
-Package pdftex.def Info: 02cost-with-l3.png used on input line 403.
+ <./07fitness.png>] <07learning.png, id=182, 578.16pt x 397.485pt>
+File: 07learning.png Graphic file (type png)
+ <use 07learning.png>
+Package pdftex.def Info: 07learning.png used on input line 405.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
 
-[25
+[23
 
- <./02cost-with-l3.png>] <01heatmap.png, id=205, 578.16pt x 397.485pt>
+ <./07learning.png>] <03cost-with-l1.png, id=189, 578.16pt x 397.485pt>
+File: 03cost-with-l1.png Graphic file (type png)
+
+<use 03cost-with-l1.png>
+Package pdftex.def Info: 03cost-with-l1.png used on input line 412.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+ [24
+
+ <./03cost-with-l1.png>] [25
+
+] [26
+
+]
+<02cost-with-l3.png, id=207, 578.16pt x 397.485pt>
+File: 02cost-with-l3.png Graphic file (type png)
+ <use 02cost-with-l3.png>
+Package pdftex.def Info: 02cost-with-l3.png used on input line 438.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+
+[27
+
+ <./02cost-with-l3.png>] <01heatmap.png, id=214, 578.16pt x 397.485pt>
 File: 01heatmap.png Graphic file (type png)
 
 <use 01heatmap.png>
-Package pdftex.def Info: 01heatmap.png used on input line 410.
+Package pdftex.def Info: 01heatmap.png used on input line 445.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
- [26
+ [28
 
  <./01heatmap.png>]
-<05heatmap.png, id=212, 578.16pt x 397.485pt>
+<05heatmap.png, id=221, 578.16pt x 397.485pt>
 File: 05heatmap.png Graphic file (type png)
  <use 05heatmap.png>
-Package pdftex.def Info: 05heatmap.png used on input line 415.
+Package pdftex.def Info: 05heatmap.png used on input line 450.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
- [27
+ [29
 
- <./05heatmap.png>] <06heatmap.png, id=219, 578.16pt x 397.485pt>
+ <./05heatmap.png>] <06heatmap.png, id=228, 578.16pt x 397.485pt>
 File: 06heatmap.png Graphic file (type png)
  <use 06heatmap.png>
-Package pdftex.def Info: 06heatmap.png used on input line 420.
+Package pdftex.def Info: 06heatmap.png used on input line 455.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
 
-[28
+[30
 
- <./06heatmap.png>] [29
-
-] [30
-
-] [31
+ <./06heatmap.png>] [31
 
 ] [32
 
 ] [33
 
-] (./20160719-cle.bbl) [34
+] [34
 
 ]
+Overfull \hbox (18.2462pt too wide) in paragraph at lines 505--505
+[][][]  
+ []
+
 [35
+
+] (./20160719-cle.bbl) [36
+
+] [37
 
 
 ]
@@ -1381,31 +1449,31 @@ Package pdftex.def Info: 06heatmap.png used on input line 420.
 \tf@snm=\write8
 \openout8 = `20160719-cle.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 481.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 481.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 516.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
  (./20160719-cle.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 481.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 481.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
 Package rerunfilecheck Info: File `20160719-cle.out' has not changed.
 (rerunfilecheck)             Checksum: A987C4DAD16A8BC21D0BC98BAF3411B6;233.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 481.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 516.
  ) 
 Here is how much of TeX's memory you used:
- 22259 strings out of 493089
- 432172 string characters out of 6134843
- 488181 words of memory out of 5000000
- 25095 multiletter control sequences out of 15000+600000
- 82379 words of font info for 68 fonts, out of 8000000 for 9000
+ 22256 strings out of 493089
+ 432103 string characters out of 6134843
+ 489181 words of memory out of 5000000
+ 25091 multiletter control sequences out of 15000+600000
+ 75764 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,15n,88p,1738b,1137s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,15n,88p,1738b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/t
-exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/
-fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
+texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
+15/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-d
+ist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
 dvips/lm/lm-mathsy.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm
 /lmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi10.pf
@@ -1415,16 +1483,15 @@ al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive
 f-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/public/lm/lmssbo10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
 public/lm/lmssbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/l
-m/lmsso10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsso12
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsso8.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on 20160719-cle.pdf (35 pages, 490562 bytes).
+m/lmsso10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsso8.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on 20160719-cle.pdf (37 pages, 475273 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 92 named destinations out of 1000 (max. 500000)
+ 364 PDF objects out of 1000 (max. 8388607)
+ 287 compressed objects within 3 object streams
+ 96 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
