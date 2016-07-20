@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.3)  18 JUL 2016 21:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.3)  19 JUL 2016 09:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1211,8 +1211,6 @@ LaTeX Font Warning: Font shape `OMS/lmss/m/n' undefined
 
 ] [9
 
-] [10
-
 ]
 LaTeX Font Info:    Try loading font information for T3+lmss on input line 259.
 
@@ -1246,7 +1244,7 @@ l.259 \end{frame}
 l.259 \end{frame}
                  
 ? 
-[11
+[10
 
 ]
 
@@ -1285,7 +1283,7 @@ l.280 \end{frame}
 l.280 \end{frame}
                  
 ? 
-[12
+[11
 
 ]
 
@@ -1340,7 +1338,9 @@ l.307 \end{frame}
 l.307 \end{frame}
                  
 ? 
-[13
+[12
+
+] [13
 
 ] [14
 
@@ -1356,87 +1356,74 @@ l.307 \end{frame}
 
 ] [20
 
-] [21
-
 ]
-<07fitness.png, id=174, 578.16pt x 397.485pt>
+<07fitness.png, id=166, 578.16pt x 397.485pt>
 File: 07fitness.png Graphic file (type png)
  <use 07fitness.png>
 Package pdftex.def Info: 07fitness.png used on input line 399.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
- [22
+ [21
 
- <./07fitness.png>] <07learning.png, id=182, 578.16pt x 397.485pt>
+ <./07fitness.png>] <07learning.png, id=174, 578.16pt x 397.485pt>
 File: 07learning.png Graphic file (type png)
  <use 07learning.png>
 Package pdftex.def Info: 07learning.png used on input line 405.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
 
-[23
+[22
 
- <./07learning.png>] <03cost-with-l1.png, id=189, 578.16pt x 397.485pt>
+ <./07learning.png>] <03cost-with-l1.png, id=181, 578.16pt x 397.485pt>
 File: 03cost-with-l1.png Graphic file (type png)
 
 <use 03cost-with-l1.png>
 Package pdftex.def Info: 03cost-with-l1.png used on input line 412.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
- [24
+ [23
 
- <./03cost-with-l1.png>] [25
-
-] [26
+ <./03cost-with-l1.png>] [24
 
 ]
-<02cost-with-l3.png, id=207, 578.16pt x 397.485pt>
+<02cost-with-l3.png, id=193, 578.16pt x 397.485pt>
 File: 02cost-with-l3.png Graphic file (type png)
  <use 02cost-with-l3.png>
-Package pdftex.def Info: 02cost-with-l3.png used on input line 438.
+Package pdftex.def Info: 02cost-with-l3.png used on input line 437.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
 
-[27
+[25
 
- <./02cost-with-l3.png>] <01heatmap.png, id=214, 578.16pt x 397.485pt>
+ <./02cost-with-l3.png>] <01heatmap.png, id=201, 578.16pt x 397.485pt>
 File: 01heatmap.png Graphic file (type png)
 
 <use 01heatmap.png>
-Package pdftex.def Info: 01heatmap.png used on input line 445.
+Package pdftex.def Info: 01heatmap.png used on input line 444.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
- [28
+ [26
 
  <./01heatmap.png>]
-<05heatmap.png, id=221, 578.16pt x 397.485pt>
+<05heatmap.png, id=208, 578.16pt x 397.485pt>
 File: 05heatmap.png Graphic file (type png)
  <use 05heatmap.png>
-Package pdftex.def Info: 05heatmap.png used on input line 450.
+Package pdftex.def Info: 05heatmap.png used on input line 449.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
- [29
+ [27
 
- <./05heatmap.png>] <06heatmap.png, id=228, 578.16pt x 397.485pt>
+ <./05heatmap.png>] <06heatmap.png, id=215, 578.16pt x 397.485pt>
 File: 06heatmap.png Graphic file (type png)
  <use 06heatmap.png>
-Package pdftex.def Info: 06heatmap.png used on input line 455.
+Package pdftex.def Info: 06heatmap.png used on input line 454.
 (pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
 
-[30
+[28
 
- <./06heatmap.png>] [31
+ <./06heatmap.png>] [29
 
-] [32
+] [30
+
+] [31
+
+] (./20160719-cle.bbl) [32
 
 ] [33
-
-] [34
-
-]
-Overfull \hbox (18.2462pt too wide) in paragraph at lines 505--505
-[][][]  
- []
-
-[35
-
-] (./20160719-cle.bbl) [36
-
-] [37
 
 
 ]
@@ -1451,7 +1438,8 @@ Overfull \hbox (18.2462pt too wide) in paragraph at lines 505--505
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 516.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 516.
- (./20160719-cle.aux)
+
+(./20160719-cle.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 516.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 516.
 Package rerunfilecheck Info: File `20160719-cle.out' has not changed.
@@ -1460,16 +1448,19 @@ Package rerunfilecheck Info: File `20160719-cle.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 516.
  ) 
 Here is how much of TeX's memory you used:
- 22256 strings out of 493089
- 432103 string characters out of 6134843
+ 22238 strings out of 493089
+ 431865 string characters out of 6134843
  489181 words of memory out of 5000000
- 25091 multiletter control sequences out of 15000+600000
+ 25081 multiletter control sequences out of 15000+600000
  75764 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,15n,88p,1738b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,15n,88p,1738b,1001s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
 texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 15/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-d
@@ -1488,10 +1479,10 @@ pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
 local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texli
 ve/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on 20160719-cle.pdf (37 pages, 475273 bytes).
+Output written on 20160719-cle.pdf (33 pages, 472590 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 96 named destinations out of 1000 (max. 500000)
+ 335 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
+ 88 named destinations out of 1000 (max. 500000)
  118 words of extra memory for PDF output out of 10000 (max. 10000000)
 
