@@ -77,10 +77,11 @@ def get_utils(typeList):
                      np.sum(typeList[j].sender_matrix * np.transpose(typeList[i].receiver_matrix))) / 4
     return out
 
-def run(alpha,cost,lam,k,sample_amount, learning_parameter,gens,runs):
+def run(alpha,cost,lam,k,learning_parameter,gens,runs):
 #####
     l1,l2,l3,l4,l5,l6 = np.array( [[0.,0.],[1.,1.]] ), np.array( [[1.,1.],[0.,0.]] ), np.array( [[1.,1.],[1.,1.]] ), np.array( [[0.,1.],[1.,0.]] ), np.array( [[0.,1.],[1.,1.]] ), np.array( [[1.,1.],[1.,0.]] )
-
+    
+    sample_amount = 15 #fixed value for fixed Q
 
     states = 2 #number of states
     messages = 2 #number of messages
@@ -92,6 +93,9 @@ def run(alpha,cost,lam,k,sample_amount, learning_parameter,gens,runs):
 
     f.writerow(["run_ID", "t1_initial", "t2_initial","t3_initial","t4_initial","t5_initial","t6_initial","t7_initial","t8_initial","t9_initial","t10_initial","t11_initial","t12_initial","alpha", "prior_cost_c", "lambda", "k", "sample_amount", "learning_parameter", "generations", "t1_final", "t2_final","t3_final","t4_final","t5_final","t6_final","t7_final","t8_final","t9_final","t10_final","t11_final","t12_final"])
 
+    f_q = csv.writer(open('./results/singlescalar-q-matrix-a%d-c%f-l%d-k%d-samples%d-learn%.2f.csv' %(alpha,cost,lam,k,sample_amount,learning_parameter),'wb')) #file to store Q-matrix
+    
+    f_q.writerow(["alpha", "prior_cost_c", "lambda", "k", "sample_amount", "learning_parameter","parent","t1_mut", "t2_mut", "t3_mut", "t4_mut", "t5_mut", "t6_mut", "t7_mut", "t8_mut", "t9_mut", "t10_mut", "t11_mut", "t12_mut"])
 ######
 
 
@@ -113,6 +117,15 @@ def run(alpha,cost,lam,k,sample_amount, learning_parameter,gens,runs):
     print '#Computing utilities, ', datetime.datetime.now()
     u = get_utils(typeList)
 
+    print '#Computing Q, ', datetime.datetime.now()
+    
+    q = get_mutation_matrix(k,states,messages,likelihoods,state_freq,sample_amount,lexica_prior,learning_parameter)
+    
+    for i in q:
+        para = np.array([str(alpha), str(cost), str(lam), str(k), str(sample_amount), str(learning_parameter)])
+        j = np.append(para,i)
+        f_q.writerow(j)
+    
 
 ###Multiple runs
     print '#Beginning multiple runs, ', datetime.datetime.now()
@@ -120,7 +133,6 @@ def run(alpha,cost,lam,k,sample_amount, learning_parameter,gens,runs):
     p_sum = np.zeros(len(typeList)) #vector to store results from a run
 
     for i in xrange(runs):
-        q = get_mutation_matrix(k,states,messages,likelihoods,state_freq,sample_amount,lexica_prior,learning_parameter) #compute new Q for each new run, as it now depends on sampled observations
         p = np.random.dirichlet(np.ones(len(typeList))) # unbiased random starting state
         p_initial = p
 
@@ -142,44 +154,3 @@ def run(alpha,cost,lam,k,sample_amount, learning_parameter,gens,runs):
     print 'Parameters: alpha = %.2f, c = %.2f, lambda = %d, k = %d, samples per type = %d, learning parameter = %.2f, generations = %d, runs = %d' % (alpha, cost, lam, k, sample_amount, learning_parameter, gens, runs)
     print 'Mean by type:'
     print p_mean
-
-#run(1,0.1,10,3,10,100,20,50)
-
-
-#alpha = 1 # rate to control difference between semantic and pragmatic violations
-#cost = 0.1 # cost for LOT-concept with upper bound
-#lam = 10 # soft-max parameter
-#k = 3  # length of observation sequences
-#sample_amount = 10 #amount of k-length samples for each production type
-#
-#gens = 20 #number of generations per simulation run
-#runs = 50 #number of independent simulation runs
-#
-#learning_parameter = 1 #prob-matching = 1, increments approach MAP
-
-
-
-#def lexica_vec(p_vec): 
-#    p_by_lexica = np.zeros(6)
-#    for i in xrange(len(p_vec)):
-#        if i < len(p_vec)/2:
-#            p_by_lexica[i] += p_vec[i]
-#        else:
-#            r = i - len(p_vec)/2
-#            p_by_lexica[r] += p_vec[i]
-#    return p_by_lexica
-
-#def record_by_type(p_vec,csv_file):
-#    for i in range(len(p_vec)):
-#        if i < len(p_vec)/2:
-#            stype = 'literal'
-#        else: stype = 'gricean'
-#        if i < len(p_vec)/2:
-#            lexicon = i
-#        else:
-#            lexicon = i - len(p_vec)/2
-#        csv_file.writerow([stype,str(lexicon),str(p_vec[i])])
-#
-#record_by_type(p_mean,f_mean)
-
-

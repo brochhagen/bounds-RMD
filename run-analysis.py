@@ -14,6 +14,5 @@ for a in alpha:
     for c in cost:
         for l in lam:
             for k in seq_length:
-                for sampl in sample_amount:
-                    for learn in learning_parameter:
-                        rmd.run(a,c,l,k,sampl,learn,gens,runs)
+                for learn in learning_parameter:
+                    rmd.run(a,c,l,k,learn,gens,runs)

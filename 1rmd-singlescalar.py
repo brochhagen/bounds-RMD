@@ -22,7 +22,7 @@ alpha = 1 # rate to control difference between semantic and pragmatic violations
 cost = 0.1 # cost for LOT-concept with upper bound
 lam = 30 # soft-max parameter
 k = 3  # length of observation sequences
-sample_amount = 10 #amount of k-length samples for each production type
+sample_amount = 15 #amount of k-length samples for each production type
 
 gens = 20 #number of generations per simulation run
 runs = 50 #number of independent simulation runs
@@ -38,6 +38,9 @@ f = csv.writer(open('./results/singlescalar-a%d-c%.2f-l%d-k%d-samples%d-learn%.2
 
 f.writerow(["run_ID", "t1_initial", "t2_initial","t3_initial","t4_initial","t5_initial","t6_initial","t7_initial","t8_initial","t9_initial","t10_initial","t11_initial","t12_initial","alpha", "prior_cost_c", "lambda", "k", "sample_amount", "learning_parameter", "generations", "t1_final", "t2_final","t3_final","t4_final","t5_final","t6_final","t7_final","t8_final","t9_final","t10_final","t11_final","t12_final"])
 
+f_q = csv.writer(open('./results/singlescalar-q-matrix-a%d-c%f-l%d-k%d-samples%d-learn%.2f.csv' %(alpha,cost,lam,k,sample_amount,learning_parameter),'wb')) #file to store Q-matrix
+
+f_q.writerow(["alpha", "prior_cost_c", "lambda", "k", "sample_amount", "learning_parameter","parent","t1_mut", "t2_mut", "t3_mut", "t4_mut", "t5_mut", "t6_mut", "t7_mut", "t8_mut", "t9_mut", "t10_mut", "t11_mut", "t12_mut"])
 ######
 
 
@@ -122,6 +125,15 @@ def get_utils():
 print '#Computing utilities, ', datetime.datetime.now()
 u = get_utils()
 
+print '#Computing Q, ', datetime.datetime.now()
+
+q = get_mutation_matrix(k)
+
+for i in q:
+    para = np.array([str(alpha), str(cost), str(lam), str(k), str(sample_amount), str(learning_parameter)])
+    j = np.append(para,i)
+    f_q.writerow(j)
+
 
 ###Multiple runs
 print '#Beginning multiple runs, ', datetime.datetime.now()
@@ -129,7 +141,6 @@ print '#Beginning multiple runs, ', datetime.datetime.now()
 p_sum = np.zeros(len(typeList)) #vector to store results from a run
 
 for i in xrange(runs):
-    q = get_mutation_matrix(k) #compute new Q for each new run, as it now depends on sampled observations
     p = np.random.dirichlet(np.ones(len(typeList))) # unbiased random starting state
     p_initial = p
 
@@ -137,9 +148,8 @@ for i in xrange(runs):
         pPrime = p * [np.sum(u[t,] * p)  for t in range(len(typeList))]
         pPrime = pPrime / np.sum(pPrime)
         p = np.dot(pPrime, q)
-    f.writerow([str(i),str(p_initial[0]), str(p_initial[1]), str(p_initial[2]), str(p_initial[3]), str(p_initial[4]), str(p_initial[5]), str(p_initial[6]), str(p_initial[7]), str(p_initial[8]), str(p_initial[9]), str(p_initial[10]), str(p_initial[11]), str(k), str(sample_amount), str(learning_parameter), str(gens), str(p[0]), str(p[1]),str(p[2]),str(p[3]),str(p[4]),str(p[5]),str(p[6]),str(p[7]),str(p[8]),str(p[9]),str(p[10]),str(p[11])])
-
-
+        f.writerow([str(i),str(p_initial[0]), str(p_initial[1]), str(p_initial[2]), str(p_initial[3]), str(p_initial[4]), str(p_initial[5]), str(p_initial[6]), str(p_initial[7]), str(p_initial[8]), str(p_initial[9]), str(p_initial[10]), str(p_initial[11]), str(alpha), str(cost), str(lam), str(k), str(sample_amount), str(learning_parameter), str(gens), str(p[0]), str(p[1]),str(p[2]),str(p[3]),str(p[4]),str(p[5]),str(p[6]),str(p[7]),str(p[8]),str(p[9]),str(p[10]),str(p[11])])
+    
     p_sum += p
 
 p_mean = p_sum / runs
@@ -151,30 +161,3 @@ print '###Overview of results###', datetime.datetime.now()
 print 'Parameters: alpha = %d, c = %.2f, lambda = %d, k = %d, samples per type = %d, learning parameter = %.2f, generations = %d, runs = %d' % (alpha, cost, lam, k, sample_amount, learning_parameter, gens, runs)
 print 'Mean by type:'
 print p_mean
-
-sys.exit()
-
-#def lexica_vec(p_vec): 
-#    p_by_lexica = np.zeros(6)
-#    for i in xrange(len(p_vec)):
-#        if i < len(p_vec)/2:
-#            p_by_lexica[i] += p_vec[i]
-#        else:
-#            r = i - len(p_vec)/2
-#            p_by_lexica[r] += p_vec[i]
-#    return p_by_lexica
-
-#def record_by_type(p_vec,csv_file):
-#    for i in range(len(p_vec)):
-#        if i < len(p_vec)/2:
-#            stype = 'literal'
-#        else: stype = 'gricean'
-#        if i < len(p_vec)/2:
-#            lexicon = i
-#        else:
-#            lexicon = i - len(p_vec)/2
-#        csv_file.writerow([stype,str(lexicon),str(p_vec[i])])
-#
-#record_by_type(p_mean,f_mean)
-
-
