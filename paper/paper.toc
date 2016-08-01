@@ -1,8 +1,8 @@
-\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1}The semantics-pragmatics divide}{1}
 \contentsline {section}{\numberline {2}Linguistic structure \& selectional dynamics}{2}
 \contentsline {subsection}{\numberline {2.1}Probabilistic models of language use}{2}
 \contentsline {paragraph}{Language (fragments).}{2}
-\contentsline {paragraph}{Signaling behavior.}{3}
+\contentsline {paragraph}{Signaling behavior.}{2}
 \contentsline {subsection}{\numberline {2.2}Expressiveness}{3}
 \contentsline {paragraph}{Symmetrized expected utility.}{3}
 \contentsline {subsection}{\numberline {2.3}Learnability}{3}
