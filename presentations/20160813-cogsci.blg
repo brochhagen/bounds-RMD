@@ -1,11 +1,11 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: 20160719-cle.aux
+The top-level auxiliary file: 20160813-cogsci.aux
 The style file: alpha.bst
 Database file #1: ./../paper/bounds-rmd.bib
 You've used 10 entries,
             2543 wiz_defined-function locations,
-            627 strings with 5884 characters,
+            627 strings with 5890 characters,
 and the built_in function-call counts, 4001 in all, are:
 = -- 403
 > -- 176

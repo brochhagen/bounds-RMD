@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.3)  15 JUL 2016 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.9.3)  2 AUG 2016 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -836,7 +836,7 @@ aTeX to use the Fira fonts on input line 91.
 )) (/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/bibentry.sty
 Package: bibentry 2007/10/30 1.5 (PWD)
 )
-No file 20160813-cogsci.bbl.
+(./20160813-cogsci.bbl)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
@@ -939,156 +939,30 @@ File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.0 (rcs-revision 1.2)
 (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.0 (rcs-revision 1.4)
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/qtree/qtree.sty
-Package: 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
-Package: qtree 2008/12/12 v.3.1bQtree: tree-drawing for linguistics
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pict2e/pict2e.sty
-Package: pict2e 2014/01/12 v0.2z Improved picture commands (HjG,RN,JT)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pict2e/pict2e.cfg
-File: pict2e.cfg 2011/04/05 v0.1t pict2e configuration for teTeX/TeXLive
-)
-Package pict2e Info: Driver file: pdftex.def on input line 119.
-Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 121.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pict2e/p2e-pdftex.def
-File: p2e-pdftex.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
-)
-\pIIe@GRAPH=\toks49
-\@arclen=\dimen201
-\@arcrad=\dimen202
-\@tempdimd=\dimen203
-)
-\c@treecount=\count177
-\c@branchcount=\count178
-\parentbox=\box65
-\treebox=\box66
-\treeboxone=\box67
-\treeboxtwo=\box68
-\treeboxthree=\box69
-\treeboxfour=\box70
-\treeboxfive=\box71
-\treeboxsix=\box72
-\treeboxseven=\box73
-\treeboxeight=\box74
-\treeboxnine=\box75
-\treeboxten=\box76
-\treeboxeleven=\box77
-\treeboxtwelve=\box78
-\treeboxthirteen=\box79
-\treeboxfourteen=\box80
-\treeboxfifteen=\box81
-\treeboxsixteen=\box82
-\treeboxseventeen=\box83
-\treeboxeighteen=\box84
-\treeboxnineteen=\box85
-\treeboxtwenty=\box86
-\treeoffsetone=\skip68
-\treeoffsettwo=\skip69
-\treeoffsetthree=\skip70
-\treeoffsetfour=\skip71
-\treeoffsetfive=\skip72
-\treeoffsetsix=\skip73
-\treeoffsetseven=\skip74
-\treeoffseteight=\skip75
-\treeoffsetnine=\skip76
-\treeoffsetten=\skip77
-\treeoffseteleven=\skip78
-\treeoffsettwelve=\skip79
-\treeoffsetthirteen=\skip80
-\treeoffsetfourteen=\skip81
-\treeoffsetfifteen=\skip82
-\treeoffsetsixteen=\skip83
-\treeoffsetseventeen=\skip84
-\treeoffseteighteen=\skip85
-\treeoffsetnineteen=\skip86
-\treeoffsettwenty=\skip87
-\treeshiftone=\skip88
-\treeshifttwo=\skip89
-\treeshiftthree=\skip90
-\treeshiftfour=\skip91
-\treeshiftfive=\skip92
-\treeshiftsix=\skip93
-\treeshiftseven=\skip94
-\treeshifteight=\skip95
-\treeshiftnine=\skip96
-\treeshiftten=\skip97
-\treeshifteleven=\skip98
-\treeshifttwelve=\skip99
-\treeshiftthirteen=\skip100
-\treeshiftfourteen=\skip101
-\treeshiftfifteen=\skip102
-\treeshiftsixteen=\skip103
-\treeshiftseventeen=\skip104
-\treeshifteighteen=\skip105
-\treeshiftnineteen=\skip106
-\treeshifttwenty=\skip107
-\treewidthone=\skip108
-\treewidthtwo=\skip109
-\treewidththree=\skip110
-\treewidthfour=\skip111
-\treewidthfive=\skip112
-\treewidthsix=\skip113
-\treewidthseven=\skip114
-\treewidtheight=\skip115
-\treewidthnine=\skip116
-\treewidthten=\skip117
-\treewidtheleven=\skip118
-\treewidthtwelve=\skip119
-\treewidththirteen=\skip120
-\treewidthfourteen=\skip121
-\treewidthfifteen=\skip122
-\treewidthsixteen=\skip123
-\treewidthseventeen=\skip124
-\treewidtheighteen=\skip125
-\treewidthnineteen=\skip126
-\treewidthtwenty=\skip127
-\daughteroffsetone=\skip128
-\daughteroffsettwo=\skip129
-\daughteroffsetthree=\skip130
-\daughteroffsetfour=\skip131
-\branchwidthone=\skip132
-\branchwidthtwo=\skip133
-\branchwidththree=\skip134
-\branchwidthfour=\skip135
-\parentoffset=\skip136
-\treeoffset=\skip137
-\daughteroffset=\skip138
-\branchwidth=\skip139
-\parentwidth=\skip140
-\treewidth=\skip141
-\qta=\toks50
-\qtb=\toks51
-\nbranches=\count179
-\qroofx=\count180
-\qroofy=\count181
-\@qrscratchbox=\box87
-)
-(./20160813-cogsci.aux)
+) (./20160813-cogsci.aux)
 \openout1 = `20160813-cogsci.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 115.
-LaTeX Font Info:    ... okay on input line 115.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 115.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 115.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 111.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 111.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 115.
+LaTeX Font Info:    ... okay on input line 111.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1126,17 +1000,17 @@ LaTeX Font Info:    ... okay on input line 115.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count182
-\scratchdimen=\dimen204
-\scratchbox=\box88
-\nofMPsegments=\count183
-\nofMParguments=\count184
-\everyMPshowfont=\toks52
-\MPscratchCnt=\count185
-\MPscratchDim=\dimen205
-\MPnumerator=\count186
-\makeMPintoPDFobject=\count187
-\everyMPtoPDFconversion=\toks53
+\scratchcounter=\count177
+\scratchdimen=\dimen201
+\scratchbox=\box65
+\nofMPsegments=\count178
+\nofMParguments=\count179
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count180
+\MPscratchDim=\dimen202
+\MPnumerator=\count181
+\makeMPintoPDFobject=\count182
+\everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1153,8 +1027,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box89
-Package hyperref Info: Link coloring OFF on input line 115.
+\AtBeginShipoutBox=\box66
+Package hyperref Info: Link coloring OFF on input line 111.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1162,62 +1036,62 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count188
+\c@section@level=\count183
 )
-LaTeX Info: Redefining \ref on input line 115.
-LaTeX Info: Redefining \pageref on input line 115.
-LaTeX Info: Redefining \nameref on input line 115.
+LaTeX Info: Redefining \ref on input line 111.
+LaTeX Info: Redefining \pageref on input line 111.
+LaTeX Info: Redefining \nameref on input line 111.
 
 (./20160813-cogsci.out) (./20160813-cogsci.out)
 \@outlinefile=\write5
 \openout5 = `20160813-cogsci.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 115.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 111.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 115.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/bx/n on input line 111.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 115.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 111.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 115.
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 111.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 115.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 115.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 111.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 115.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 115.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 115.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/bx/n on input line 111.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 115.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 115.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 115.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 111.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 115.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 115.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 115.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 111.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 115.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 115.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 111.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 115.
+(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 111.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 115.
+(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmr/bx/n on input line 115.
+(Font)                  OT1/lmss/bx/n --> T1/lmr/bx/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/bx/n --> T1/lmss/bx/n on input line 115.
+(Font)                  T1/lmss/bx/n --> T1/lmss/bx/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 115.
+(Font)                  T1/lmss/m/n --> T1/lmss/bx/n on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 115.
+(Font)                  T1/lmss/m/it --> T1/lmss/bx/it on input line 111.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 115.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/bx/n on input line 111.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -1243,73 +1117,68 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 115.
+LaTeX Info: Redefining \includegraphics on input line 111.
 
-
-Package picture Warning: Package `pict2e' is loaded after `picture'.
-(picture)                Load package `picture' afterwards to get full support
-(picture)                of its additional syntax with length specifications.
-
-No file 20160813-cogsci.nav.
+(./20160813-cogsci.nav)
 
 Package hyperref Warning: Option `pdfauthor' has already been used,
-(hyperref)                setting the option has no effect on input line 120.
+(hyperref)                setting the option has no effect on input line 117.
 
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 130
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 126
 .
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 130.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 126.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 130
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 126
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 130
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 126
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 130.
+(Font)              <10> on input line 126.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 130.
+(Font)              <7> on input line 126.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 130.
-LaTeX Font Info:    Try loading font information for U+msa on input line 130.
+(Font)              <5> on input line 126.
+LaTeX Font Info:    Try loading font information for U+msa on input line 126.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 130.
+LaTeX Font Info:    Try loading font information for U+msb on input line 126.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 130.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 126.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 130.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 126.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 130.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 126.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 130.
+(Font)              <8> on input line 126.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 130.
+(Font)              <6> on input line 126.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 130.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 126.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 130.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 126.
 
-Overfull \vbox (26.63992pt too high) detected at line 130
+Overfull \vbox (26.63992pt too high) detected at line 126
  []
 
 [1
@@ -1319,138 +1188,95 @@ Overfull \vbox (26.63992pt too high) detected at line 130
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 161.
+(Font)              <10.95> on input line 152.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 161.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 152.
  [3
 
 ]
+LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <6> not available
+(Font)              Font shape `T1/lmss/bx/sl' tried instead on input line 168.
 
-LaTeX Warning: Citation `horn:1972' undefined on input line 178.
-
-
-LaTeX Warning: Citation `gazdar:1979' undefined on input line 178.
-
-
-LaTeX Warning: Citation `grice:1975' undefined on input line 178.
-
-[4
+ [4
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmss on input line 193
+LaTeX Font Info:    Try loading font information for OMS+lmss on input line 184
 .
-LaTeX Font Info:    No file OMSlmss.fd. on input line 193.
+LaTeX Font Info:    No file OMSlmss.fd. on input line 184.
 
 
 LaTeX Font Warning: Font shape `OMS/lmss/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 193.
+(Font)              for symbol `textbullet' on input line 184.
 
 [5
 
 ] [6
 
-]
+] [7
 
-LaTeX Warning: Citation `griffiths+kalish:2007' undefined on input line 218.
+] [8
 
-
-LaTeX Warning: Citation `hofbauer+sigmund:2003' undefined on input line 218.
-
-
-LaTeX Warning: Citation `nowak+krakauer:1999' undefined on input line 218.
-
-[7
+] [9
 
 ]
+LaTeX Font Info:    Try loading font information for T3+lmss on input line 250.
 
-LaTeX Warning: Citation `benz+etal:2005' undefined on input line 234.
-
-
-LaTeX Warning: Citation `bergen+etal:2016' undefined on input line 234.
-
-
-LaTeX Warning: Citation `frank+goodman:2012' undefined on input line 234.
-
-
-LaTeX Warning: Citation `franke+jaeger:2014' undefined on input line 234.
-
-[8
-
-]
-LaTeX Font Info:    Try loading font information for T3+lmss on input line 256.
-
-LaTeX Font Info:    No file T3lmss.fd. on input line 256.
+LaTeX Font Info:    No file T3lmss.fd. on input line 250.
 
 
 LaTeX Font Warning: Font shape `T3/lmss/m/n' undefined
-(Font)              using `T3/cmr/m/n' instead on input line 256.
+(Font)              using `T3/cmr/m/n' instead on input line 250.
 
 ! Missing { inserted.
 <to be read again> 
                    }
-l.256 \end{frame}
+l.250 \end{frame}
                  
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.256 \end{frame}
+l.250 \end{frame}
                  
 ? 
 ! Missing { inserted.
 <to be read again> 
                    }
-l.256 \end{frame}
+l.250 \end{frame}
                  
 ? 
 ! Missing } inserted.
 <inserted text> 
                 }
-l.256 \end{frame}
+l.250 \end{frame}
                  
 ? 
-[9
-
-]
-
-LaTeX Warning: Command \; invalid in math mode on input line 278.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 278.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 278.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 278.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 278.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 278.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 278.
-
-
-LaTeX Warning: Command \; invalid in math mode on input line 278.
-
 [10
 
-] [11
+] <literal.png, id=105, 983.675pt x 552.0625pt>
+File: literal.png Graphic file (type png)
+ <use literal.png>
+Package pdftex.def Info: literal.png used on input line 273.
+(pdftex.def)             Requested size: 307.29262pt x 172.46013pt.
+ [11
 
-] [12
+ <./literal.png>] <gricean.png, id=113, 983.675pt x 552.0625pt>
+File: gricean.png Graphic file (type png)
+ <use gricean.png>
+Package pdftex.def Info: gricean.png used on input line 296.
+(pdftex.def)             Requested size: 307.29262pt x 172.46013pt.
 
-]
+[12
+
+ <./gricean.png>] [13
+
+] (./replicator.tex)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 309.
+(Font)              <12> on input line 334.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 309.
- [13
-
-] [14
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 334.
+ [14
 
 ] [15
 
@@ -1462,13 +1288,78 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
 
 ] [19
 
-] [20
+]
+[20
 
-] [21
+] <07fitness.png, id=168, 578.16pt x 397.485pt>
+File: 07fitness.png Graphic file (type png)
+ <use 07fitness.png>
+Package pdftex.def Info: 07fitness.png used on input line 394.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+ [21
+
+ <./07fitness.png>] <07learning.png, id=175, 578.16pt x 397.485pt>
+File: 07learning.png Graphic file (type png)
+
+<use 07learning.png>
+Package pdftex.def Info: 07learning.png used on input line 400.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+ [22
+
+ <./07learning.png>]
+<03cost-with-l1.png, id=182, 578.16pt x 397.485pt>
+File: 03cost-with-l1.png Graphic file (type png)
+ <use 03cost-with-l1.png>
+Package pdftex.def Info: 03cost-with-l1.png used on input line 407.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+
+[23
+
+ <./03cost-with-l1.png>] [24
 
 ]
-No file 20160813-cogsci.bbl.
-[22
+<02cost-with-l3.png, id=194, 578.16pt x 397.485pt>
+File: 02cost-with-l3.png Graphic file (type png)
+ <use 02cost-with-l3.png>
+Package pdftex.def Info: 02cost-with-l3.png used on input line 432.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+
+[25
+
+ <./02cost-with-l3.png>] <01heatmap.png, id=202, 578.16pt x 397.485pt>
+File: 01heatmap.png Graphic file (type png)
+
+<use 01heatmap.png>
+Package pdftex.def Info: 01heatmap.png used on input line 439.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+ [26
+
+ <./01heatmap.png>]
+<05heatmap.png, id=209, 578.16pt x 397.485pt>
+File: 05heatmap.png Graphic file (type png)
+ <use 05heatmap.png>
+Package pdftex.def Info: 05heatmap.png used on input line 444.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+ [27
+
+ <./05heatmap.png>] <06heatmap.png, id=216, 578.16pt x 397.485pt>
+File: 06heatmap.png Graphic file (type png)
+ <use 06heatmap.png>
+Package pdftex.def Info: 06heatmap.png used on input line 449.
+(pdftex.def)             Requested size: 307.28789pt x 211.26042pt.
+
+[28
+
+ <./06heatmap.png>] [29
+
+] [30
+
+] [31
+
+] (./20160813-cogsci.bbl) [32
+
+] [33
+
 
 ]
 \tf@nav=\write6
@@ -1480,61 +1371,50 @@ No file 20160813-cogsci.bbl.
 \tf@snm=\write8
 \openout8 = `20160813-cogsci.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 378.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 378.
- (./20160813-cogsci.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 378.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 378.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 511.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 511.
 
+(./20160813-cogsci.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 511.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 511.
+Package rerunfilecheck Info: File `20160813-cogsci.out' has not changed.
+(rerunfilecheck)             Checksum: A987C4DAD16A8BC21D0BC98BAF3411B6;233.
 
-Package rerunfilecheck Warning: File `20160813-cogsci.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `20160813-cogsci.out':
-(rerunfilecheck)             Before: F77C6D57AB875FEF112D5E3A63BEB508;87
-(rerunfilecheck)             After:  A987C4DAD16A8BC21D0BC98BAF3411B6;233.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 378.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 511.
  ) 
 Here is how much of TeX's memory you used:
- 22367 strings out of 493089
- 432532 string characters out of 6134843
- 494128 words of memory out of 5000000
- 25239 multiletter control sequences out of 15000+600000
- 95547 words of font info for 80 fonts, out of 8000000 for 9000
+ 22426 strings out of 493089
+ 436173 string characters out of 6134843
+ 492629 words of memory out of 5000000
+ 25263 multiletter control sequences out of 15000+600000
+ 98349 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,15n,83p,1741b,1048s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2015/t
-exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/
-fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
-dvips/lm/lm-mathsy.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
+ 71i,15n,88p,1741b,999s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
+texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2015/t
+exmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-dist/
+fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
+dvips/lm/lm-mathit.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm
 /lmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi10.pf
-b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/loc
-al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
-public/lm/lmsso10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm
-/lmsso12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsso8.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on 20160813-cogsci.pdf (22 pages, 198641 bytes).
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/lm/lmss8.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/lm/lmssbo10.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/lm/lmsso10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/lm/lmsso12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsso
+8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on 20160813-cogsci.pdf (33 pages, 557052 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
- 59 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 336 PDF objects out of 1000 (max. 8388607)
+ 259 compressed objects within 3 object streams
+ 84 named destinations out of 1000 (max. 500000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
