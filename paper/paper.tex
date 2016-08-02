@@ -44,7 +44,6 @@
 
 \begin{document}
 \maketitle
-\tableofcontents
 \section{The semantics-pragmatics divide}\label{sec:introduction}
 
 In linguistic theorizing, it is common to draw a distinction between semantics and pragmatics. Broadly speaking, the former concerns the truth-conditional content of expressions, whereas the latter concerns information beyond such literal meanings. For instance, the integration of context and the derivation of defeasible inferences. Thus, the information conveyed by an utterance is seldom, if ever, solely determined by semantics, but rather by its pragmatic enrichment. For instance, truth-conditionally, {\em Bill read five books} does not set an upper-bound to the amount of books that Bill read; he may have read six, seven, or more books. However, the (defeasible) inference that {\em Bill read no more than five books} may be drawn on pragmatic grounds. After all, if Bill had read, for example, six books, and had the speaker known this, she would have said so. In this manner, what is conveyed (pragmatically) can go beyond what is (literally) said. 
@@ -52,14 +51,23 @@ In linguistic theorizing, it is common to draw a distinction between semantics a
 
 Much research in semantics and pragmatics is aimed at characterizing the information conveyed by classes of expressions such as numerals in terms of either domain, or their interplay. Thus, while there is disagreement on where their boundary lies, the distinction between semantics and pragmatics plays an important (if tacit) role in linguistics. However, an issue that has received little attention is the justification of semantic structure in light of pragmatics. Put differently, this issue concerns the selection and pervasiveness of certain semantic structures over others under consideration of the informational enrichment provided by pragmatics. 
 
-Prima facie, it is puzzling that {\em Bill read five books} does not semantically rule out its more informative or ``stronger'' alternatives. More poignantly, would it not serve language users better if weak(er) expressions such as {\em warm}, {\em or}, {\em some} or {\em big} were truth-conditionally incompatible with stronger alternatives such as, respectively, {\em hot}, {\em and}, {\em all} and {\em huge}? After all, analogously to the example sketched above, this is what a pragmatically enriched interpretation yields; an upper-bound that rules out these alternatives through a so-called scalar inference \citep{horn:1972,gazdar:1979}. Once a distinction between semantics and pragmatics is drawn, similar questions can be posed for other types of pragmatic inferences, such as ignorance inferences as and manner inferences.
-
+Prima facie, it is puzzling that {\em Bill read five books} does not semantically rule out its more informative or ``stronger'' alternatives. More poignantly, would it not serve language users better if weak(er) expressions such as {\em warm}, {\em or}, {\em some} or {\em big} were truth-conditionally incompatible with stronger alternatives such as, respectively, {\em hot}, {\em and}, {\em all} and {\em huge}? After all, analogously to the example sketched above, this is what a pragmatically enriched interpretation yields; an upper-bound that rules out these alternatives through a so-called scalar inference \citep{horn:1972,gazdar:1979}. The present investigation focuses on the lack of lexicalization of such upper-bounds in natural languages. That is, we seek to provide an explanation for the selection of the particular semantics of scalar expressions, which in turn hinges on the semantics-pragmatics distinction for what is ultimately conveyed to interlocutors. However, once a distinction between semantics and pragmatics is drawn, similar questions can be posed for other types of pragmatic inferences, such as ignorance and manner inferences. 
 
 
 A number of recent investigations have began to address issues pertaining to the development and selection of linguistic properties (see \citealt{steels:2015} and \citealt{tamariz+kirby:2016} for recent overviews). Our starting point is given by the overarching account of competing pressures that has crystallized across these approaches: Natural languages need to allow for successful communication, one the one hand, and be well suited for acquisition, on the other. That is, they need to be well-adapted to the communicative needs within a linguistic community, as well as be learnable to survive their faithful transmission across generations. We proceed by instantiating these pressures in the replicator-mutator dynamics, commonly used in evolutionary game theory. Overall, this model allows for general and precise means to model the dynamics of linguistic pressures by combining functional pressure on successful communication, effects of learning biases on (iterated) Bayesian learning \citep{griffiths+kalish:2007}, and  probabilistic models of language use in populations with distinct lexica \citep{frank+goodman:2012,franke+jaeger:2014, bergen+etal:2016}. Drawing from the latter research strand allows for the representation of a distinction between semantics and pragmatics in communicative behavior. More broadly, it connects the recent surge in models of synchronic probabilistic rational language use with diachronic models of cultural evolution.
 
 
 \section{Conveying upper-bounds}
+Scalar inferences involve the pragmatic derivation of an upper-bound for weak scalar expressions provided the hearer assumes the speaker to be knowledgeable and cooperative. A scale is an informativity induced ordering of relevant alternatives. Here, informativity is understood as entailment. For instance, {\em all students came} entails {\em most students came}, which in turn entails {\em some students came}. In this sense, {\em some} is weaker than {\em all}. The inference derived from utterances involving weaker alternatives is that stronger ones do not hold, e.g. {\em some students came} may be taken to convey that {\em not all students came}.
+
+\hl{say something about this pattern being widespread across languages. Give examples of classes of expressions in English, as alluded above (numerals, scalar adjectives, quantifiers)}
+
+Framed in Gricean terms \citep{grice:1975}, the hearer reasons about the speaker's choice of a weak alternative over a stronger one; had the speaker known that a stronger alternatives holds, she would have said so as this would have been more informative, since she did not, the hearer can infer that the stronger alternatives do not hold. Analogously, a speaker who reasons about her addressee may be rely on her to derive this inference. In this way, the strengthened, upper-bounded, state of affairs can be conveyed without codifiying the bound explicitly in the semantics. 
+
+\paragraph{Function-based explanations.} Two ingredients are key to this derivation; (the assumptions of) cooperation and knowledge about the issue at hand. It is not difficult to imagine cases were one or both are not given. The speaker may (be assumed to) want to withhold information about the students' attendance, or may have left early without being able to verify the attendance to a satisfactory degree.
+
+\paragraph{Learning-based explanations.}
+
 \hl{start bottom up -- from the behavior of agents to the overall dynamics. Here, begin with language use and introduce scalar inferences on the way as the object of study we will focus on here} 
 
 \paragraph{Language (fragments).}
@@ -120,10 +128,7 @@ The proportion of players of type $i$, $x_i$, is initialized as an arbitrary dis
 \paragraph{Procedural description.} The game is initialized with some arbitrary distribution over player types. At the game's onset we compute $Q$ once based on the sets  of sequences $D$ (one for each parent type). Replicator dynamics are computed based on the fitness of each type in the current population as usual. $Q$ is computed anew for each independent run (of $g$ generations) given that it depends on $D$, which is sampled from production probabilities.
 
 
-\section{Upper-bounds in weak scalar alternatives}
-\hl{phenomenon description}
-
-\subsection{Analysis}
+\section{Analysis}
 
 \paragraph{Languages.} We consider a population of players with two signaling behaviors, literal and Gricean (level $0$ and $1$ below), each equipped with one of $6$ lexicons. This yields a total of $12$ distinct player types $t \in T$. $|M| = |S| = 2$, i.e., a lexicon is a $(2,2)$-matrix. These are listed in Table \ref{tab:lexica}. 
 
