@@ -58,17 +58,16 @@ A number of recent investigations have began to address issues pertaining to the
 
 
 \section{Conveying upper-bounds}
-Scalar inferences involve the pragmatic derivation of an upper-bound for weak scalar expressions provided the hearer assumes the speaker to be knowledgeable and cooperative. A scale is an informativity induced ordering of relevant alternatives. Here, informativity is understood as entailment. For instance, {\em all students came} entails {\em most students came}, which in turn entails {\em some students came}. In this sense, {\em some} is weaker than {\em all}. The inference derived from utterances involving weaker alternatives is that stronger ones do not hold, e.g. {\em some students came} may be taken to convey that {\em not all students came}.
+Scalar inferences refer to the pragmatic derivation of an upper-bound for weak scalar expressions to the effect that stronger alternatives are inferred to not hold, e.g. {\em some students came} may be taken to convey that {\em not all students came}. The order of an expression such as {\em some} with respect to an alternative, e.g., {\em all}, is induced by entailment. For instance, {\em all students came} entails {\em most students came}, which in turn entails {\em some students came}. In this sense, {\em some} is weaker than {\em all}. A considerable class of natural language expressions do not lexicalize an upper-bound and can be ordered in this fashion, allowing for their pragmatic strengthening. As alluded at above, examples in English include numerals, scalar adjectives, quantifiers, modals, and connectives. \hl{possibly add some typological data on universality, frequency, monomorphemic status}
 
-\hl{say something about this pattern being widespread across languages. Give examples of classes of expressions in English, as alluded above (numerals, scalar adjectives, quantifiers)}
+The pragmatic enrichment of the semantic content of such expressions is enabled by mutual reasoning \citep{grice:1975}. More specifically, it is driven by interlocutors' mutual expectations of rational language use. The hearer reasons about the speaker's choice of a weak alternative over a stronger one. Had the speaker known that a stronger alternatives holds, she would have said so as this would have been more informative. Since she did not, the hearer can infer that the stronger alternative does not hold. Analogously, a speaker who reasons about her addressee may rely on her to derive this inference. In this way, a strengthened, upper-bounded, state of affairs can be conveyed without codifying the bound explicitly in the semantics.
 
-Framed in Gricean terms \citep{grice:1975}, the hearer reasons about the speaker's choice of a weak alternative over a stronger one; had the speaker known that a stronger alternatives holds, she would have said so as this would have been more informative, since she did not, the hearer can infer that the stronger alternatives do not hold. Analogously, a speaker who reasons about her addressee may be rely on her to derive this inference. In this way, the strengthened, upper-bounded, state of affairs can be conveyed without codifiying the bound explicitly in the semantics. 
+However, while pragmatics offers means to convey upper-bounds, the question why they are not part of the lexical meaning of these expressions remains. There are two main explanatory venues for this pattern. The first targets the functional advantages a lack of upper-bounds may confer to language users, whereas the second focuses on a learnability advantage of simpler over more complex semantic representations. 
 
-\paragraph{Function-based explanations.} Two ingredients are key to this derivation; (the assumptions of) cooperation and knowledge about the issue at hand. It is not difficult to imagine cases were one or both are not given. The speaker may (be assumed to) want to withhold information about the students' attendance, or may have left early without being able to verify the attendance to a satisfactory degree.
+\paragraph{Function-based explanations.} Two assumptions are key to the pragmatic strengthening of weak alternatives: (the assumption of) cooperation and knowledge about the issue at hand. That is, the hearer needs to assume the speaker to be as informative as possible, i.e., not to withhold information, and that the speaker is knowlegeable, e.g., she knows whether {\em all students came}. Conversely, the speaker needs to assume the hearer to regard these conditions as satisfied. It is not difficult to imagine scenarios where either or both of these conditions are not given. For instance, the speaker may (be assumed to) not want to disclose all information about the students' attendance, or may have left early without being able to verify the attendance to a satisfactory degree. \hl{here}
 
 \paragraph{Learning-based explanations.}
 
-\hl{start bottom up -- from the behavior of agents to the overall dynamics. Here, begin with language use and introduce scalar inferences on the way as the object of study we will focus on here} 
 
 \paragraph{Language (fragments).}
 
@@ -118,7 +117,7 @@ The proportion of players of type $i$, $x_i$, is initialized as an arbitrary dis
 \begin{itemize}
     \item $f_i = \sum_j x_j U(x_i,x_j)$
     \item $\Phi = \sum_i x_i f_i$
-    \item $Q_{ij} \propto [\sum_d P(d|t_i) \; P(t_j|d)]^l$, where $P(t_j|d) \propto p^\star(t_j) P(d|t_j)$, $d$ is a sequence of observations of length $k$ of the form \tuple{\tuple{s_i,m_j}, ... \tuple{s_k, m_l}}, and $l \geq 1$ is a learning parameter.
+    \item $Q_{ij} \propto \sum_d P(d|t_i) \; P(t_j|d)$, where $P(t_j|d) \propto [p(t_j) P(d|t_j)]^l$, $d$ is a sequence of observations of length $k$ of the form \tuple{\tuple{s_i,m_j}, ... \tuple{s_k, m_l}}, and $l \geq 1$ is a learning parameter.
 	\item For parental learning (standard RMD): $\dot x_i = \sum_j Q_{ji} \frac{x_j f_j}{\Phi}$
 \end{itemize}
 

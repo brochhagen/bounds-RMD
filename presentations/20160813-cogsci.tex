@@ -110,7 +110,7 @@ bg= blue!5}
 
 \begin{document}
 
-\renewcommand{\inserttotalframenumber}{20}
+\renewcommand{\inserttotalframenumber}{26}
 \title{Learning biases may prevent lexicalization of pragmatic inferences}%\\[0,1cm] 
 \subtitle{A case study combining iterated (Bayesian) learning\\ and functional selection}
 %\subtitle{An overview}
@@ -321,35 +321,50 @@ Two competing pressures:
 \begin{frame} 
 	\frametitle{Functional pressure (replicator dynamics); $\hat{x}_i = \frac{x_i f_i}{\Phi}$
 }
-\begin{center}
-\resizebox{!}{.7\paperheight}{\input{replicator.tex}}
-\end{center}
-%\input{replicator.tex}
-%
-%	\begin{itemize}\itemsep1.5em
-%			\item Population of types $x$\\[0,3cm] $x_i$ is the proportion of $t_i$ in $x$
-%			\item Fitness of type $i$\\[0,3cm] $f_i =  \sum_j x_j U(x_i,x_j)$
-%			\item Average fitness in the population\\[0,3cm] $\Phi = \sum_i x_i f_i$
-%	\end{itemize}
+%\begin{center}
+%\resizebox{!}{.7\paperheight}{\input{replicator.tex}}
+%\end{center}
+
+	\begin{itemize}\itemsep1.5em
+			\item Population of types $x$\\[0,3cm] $x_i$ is the proportion of $t_i$ in $x$
+			\item Fitness of type $i$\\[0,3cm] $f_i =  \sum_j x_j U(x_i,x_j)$
+			\item Average fitness in the population\\[0,3cm] $\Phi = \sum_i x_i f_i$
+	\end{itemize}
+\end{frame}
+
+%\begin{frame}
+%	\frametitle{Iterated learning (mutator dynamics)}
+%\begin{itemize} \itemsep1em
+%		\item $Q_{ji} \propto \sum_d P(d|t_j)P(t_i|d)$
+%		\item $d = \tuple{\tuple{s_h,m_n}, ..., \tuple{s_l,m_o}}$ of length $k$
+%		\item $P(d|t_j)$ 
+%		\item $P(t_i|d) \propto [P(t_i)P(d|t_i)]^l$, $l \geq 1$
+%		\item Prior encodes learning biases of players prior to data exposure%\\[0,3cm]
+%\end{itemize}
+%\end{frame}
+
+\begin{frame}
+	\frametitle{I. Iterated learning (mutator dynamics): Parent data}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{parent}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Iterated learning (mutator dynamics)}
-\begin{itemize} \itemsep1em
-		\item $Q_{ji} \propto \sum_d P(d|t_j)P(t_i|d)$
-		\item $d = \tuple{\tuple{s_h,m_n}, ..., \tuple{s_l,m_o}}$ of length $k$
-		\item $P(d|t_j)$ 
-		\item $P(t_i|d) \propto [P(t_i)P(d|t_i)]^l$, $l \geq 1$
-		\item Prior encodes learning biases of players prior to data exposure%\\[0,3cm]
-\end{itemize}
+	\frametitle{II. Iterated learning (mutator dynamics)}
+
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{learning}
+
+
+
 \end{frame}
 
-\begin{frame}
-	\frametitle{Replicator-mutator dynamics}
-\begin{center}
-$\hat{x}_i = \sum_j Q_{ji} \frac{x_j f_j}{\Phi}$
-\end{center}
-\end{frame}
+
+%\begin{frame}
+%	\frametitle{Replicator-mutator dynamics}
+%\begin{center}
+%$\hat{x}_i = \sum_j Q_{ji} \frac{x_j f_j}{\Phi}$
+%\end{center}
+%\end{frame}
 
 
 \section{Analysis}
@@ -358,19 +373,28 @@ $\hat{x}_i = \sum_j Q_{ji} \frac{x_j f_j}{\Phi}$
 
 \begin{frame}
 	\frametitle{Lexica, signaling behavior \& types}
-\underline{Lexica}
+\underline{Lexica subset}
 \begin{table}
 \centering 
 \begin{tabular}{l c l}
-$L_1$ = $\begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix}$ & 
-$L_2$ = $\begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}$ & 
-$L_3$ = $\begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$\\[1cm]
-
 $L_4$ = $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ &
-$L_5$ = $\begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}$ &
-$L_6$ = $\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$
+$L_5$ = $\begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}$
 \end{tabular}
 \end{table}
+
+%\begin{table}
+%\centering 
+%\begin{tabular}{l c l}
+%$L_1$ = $\begin{pmatrix} 0 & 0 \\ 1 & 1 \end{pmatrix}$ & 
+%$L_2$ = $\begin{pmatrix} 1 & 1 \\ 0 & 0 \end{pmatrix}$ & 
+%$L_3$ = $\begin{pmatrix} 1 & 1 \\ 1 & 1 \end{pmatrix}$\\[1cm]
+%
+%$L_4$ = $\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ &
+%$L_5$ = $\begin{pmatrix} 0 & 1 \\ 1 & 1 \end{pmatrix}$ &
+%$L_6$ = $\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$
+%\end{tabular}
+%\end{table}
+
 \underline{Signaling behavior}\\ {\em Literal} or {\em pragmatic}\\[0.75cm]
 \underline{Types}\\ $12$ types ($2$ behaviors $\times$ $6$ lexica)
 \end{frame}
@@ -381,21 +405,21 @@ $L_6$ = $\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$
 
 \begin{frame}
 \begin{itemize}\itemsep1em
-\item $P(t_i)$ managed by parameter $c \in [0,1]$ 
-\item Signaling behavior: \alert{$\lambda$}, $\alpha$
-\item Learning \alert{c, k}, \# of sequences of length k, \alert{l}
+\item $P(t_i)$ controlled by parameter $c \in [0,1]$ 
+\item Signaling: $\lambda$, $\alpha$, literal or pragmatic
+\item Learning \alert{c}, \alert{l}, datum length k, \# of sequences of length k
 \end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Fitness only}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{07fitness}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{cogsci-fitnessonly}
 
 \end{frame}
 
 \begin{frame}
 \frametitle{Learning only}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{07learning}
+\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{cogsci-learningonly}
 
 \end{frame}
 
@@ -420,13 +444,13 @@ $L_6$ = $\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$
 
   \begin{itemize}
     \item Highly polymorphic populations even for high $c$
-    \item Role of learning mechanisms, rationality, and learning observations unexplored
+    \item Role of parameters unexplored
   \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Effect of prior with more posterior maximization}
+	\frametitle{Effect of prior with higher posterior maximization}
 \includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{02cost-with-l3}
 
 \end{frame}
@@ -438,15 +462,6 @@ $L_6$ = $\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$
 
 \end{frame}
 
-\begin{frame}
-  \frametitle{Rationality and sequence length I}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{05heatmap}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Rationality and sequence length II}
-\includegraphics[width=\linewidth,height=\textheight,keepaspectratio]{06heatmap}
-\end{frame}
 \metroset{sectionpage=none}
 
 
@@ -458,41 +473,45 @@ $L_6$ = $\begin{pmatrix} 1 & 1 \\ 1 & 0 \end{pmatrix}$
 		\item Pragmatics compensates for \makebox(0,0){\put(0,4\normalbaselineskip){%
                $\left.\rule{0pt}{2.5\normalbaselineskip}\right\}$ Lack of semantic upper-bounds}} \\
  potential loss in expressivity  
-		\item Functional advantages 
-		\begin{itemize}
-		  \item Reliability of contextual cues to cancel implicatures
-		  \item Lexicon size
-		  \item ...
-		\end{itemize}
+%		\item Functional advantages 
+%		\begin{itemize}
+%		  \item Reliability of contextual cues to cancel implicatures
+%		  \item Lexicon size
+%		  \item ...
+%		\end{itemize}
  \end{itemize}
-
+\vspace{1.5cm}
 Provided
-
 \begin{itemize} 
   \item Some degree of rationality in learning \& choice
-  \item Relation between bounds and simplicity
+  \item Relation between bounds and learnability 
 \end{itemize}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Concluding remarks: Model}
-\begin{itemize}\itemsep1em
-		\item Combines 
-		  \begin{itemize} 
-		    \item Functional pressure
-		    \item Learning pressure 
-		    \item (Probabilistic) hearer \& speaker models
-		    \item Distinct languages
-		  \end{itemize}
-	\end{itemize}
-\end{frame}
+%\begin{frame}
+%	\frametitle{Concluding remarks: Model}
+%Combines
+%\begin{itemize}\itemsep1em
+%		    \item Functional pressure
+%		    \item Learning pressure 
+%		    \item (Probabilistic) hearer \& speaker models
+%		    \item Distinct languages
+%	\end{itemize}
+%\end{frame}
 
 \begin{frame}
-  \frametitle{Future directions}
-    \begin{itemize}\itemsep1em
-      \item Generalization
+  \frametitle{Future directions \& details}
+Not covered
+\begin{itemize}\itemsep0.75em
+    \item Effects of variation in learning data (size and datum length)
+    \item Interaction of different parameters (e.g. $\lambda$ and $l$)
+    \item ...
+\end{itemize}
+\vspace{1cm}
+Future
+    \begin{itemize}\itemsep0.75em
       \item Frequency effects
-      \item Larger lexica \& uncertainty
+      \item Larger lexica \& other functional (dis)advantages 
       \item Further applications
     \end{itemize}
 \end{frame}
