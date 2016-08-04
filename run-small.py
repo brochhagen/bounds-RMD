@@ -1,17 +1,15 @@
 import modsinglescalar as rmd
-#parameter order for run(*) is run(alpha,cost,lam,k,sample_amount, learning_parameter,gens,runs)
+#parameter order for run(*) is run(alpha,cost,lam,k, learning_parameter,gens,runs)
 
-a = 1
-lam = [10,30]
-cost = [0.01,0.05,0.1,0.2,0.3,0.4,0.5,0.7,0.8,0.9]
+alpha = 1
+lam = 30
+cost = [x/100. for x in xrange(1,101)]
 seq_length = [1,3,5,9,13,15,17,20]
 learning_parameter = [1,2,4,6,8,10]
 gens = 20
-runs = 1000
+runs = 10000
 
 for c in cost:
-    for l in lam:
-        for k in seq_length:
-            for sampl in sample_amount:
-                for learn in learning_parameter:
-                    rmd.run(a,c,l,k,learn,gens,runs)
+    for k in seq_length:
+        for learn in learning_parameter:
+                    rmd.run(alpha,c,lam,k,learn,gens,runs)
